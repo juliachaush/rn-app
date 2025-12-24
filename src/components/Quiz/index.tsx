@@ -12,7 +12,7 @@ type Props = {
   image: any;
 };
 
-const QuizCard = ({ id, title, description, image }: Props) => {
+export const QuizCard = ({ id, title, description, image }: Props) => {
   const router = useRouter();
 
   const handlePress = () => {
@@ -40,5 +40,3 @@ const QuizCard = ({ id, title, description, image }: Props) => {
     </Pressable>
   );
 };
-
-export default QuizCard;

@@ -1,7 +1,7 @@
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { SymbolViewProps, SymbolWeight } from "expo-symbols";
 import { ComponentProps } from "react";
-import { OpaqueColorValue, type StyleProp, type TextStyle } from "react-native";
+import { type StyleProp, type TextStyle } from "react-native";
 
 type IconMapping = Record<
   SymbolViewProps["name"],
@@ -24,7 +24,7 @@ export function IconSymbol({
 }: {
   name: IconSymbolName;
   size?: number;
-  color?: string | OpaqueColorValue;
+  color?: any;
   style?: StyleProp<TextStyle>;
   weight?: SymbolWeight;
 }) {

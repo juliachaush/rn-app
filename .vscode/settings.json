@@ -12,5 +12,6 @@
     "typescript",
     "javascriptreact",
     "typescriptreact"
-  ]
+  ],
+  "CodeGPT.apiKey": "OpenAI"
 }

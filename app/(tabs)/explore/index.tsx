@@ -15,7 +15,7 @@ const { width } = Dimensions.get("window");
 const CARD_WIDTH = width * 0.6;
 const CARD_HEIGHT = CARD_WIDTH * 1.5;
 
-export default function NetflixScreen() {
+export default function ExploreScreen() {
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}

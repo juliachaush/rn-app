@@ -12,7 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import ProgressWheel from "../../../src/components/Progress";
-import QuizCard from "../../../src/components/Quiz";
+import { QuizCard } from "../../../src/components/Quiz";
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 

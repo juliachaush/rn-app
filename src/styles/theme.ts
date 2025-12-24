@@ -1,6 +1,7 @@
 import { Platform } from "react-native";
 
 const learningGreen = "#1DB954";
+const darkgGreen = "#072e14ff";
 // const learningPurpur = "#b91d1dff";
 const learningBlack = "#191414";
 const learningDarkGray = "#121212";
@@ -17,6 +18,7 @@ export const colors = {
     tabIconSelected: learningGreen,
     accent: learningGreen,
     surface: "#F6F6F6",
+    darkAccent: darkgGreen,
   },
   dark: {
     text: learningWhite,
@@ -27,6 +29,7 @@ export const colors = {
     tabIconSelected: learningGreen,
     accent: learningGreen,
     surface: learningBlack,
+    darkAccent: darkgGreen,
   },
 };
 
