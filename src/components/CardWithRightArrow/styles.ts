@@ -1,54 +1,56 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../styles/theme";
+import { Theme } from "../../styles/theme/theme";
 
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: colors.dark.tint,
-    padding: 16,
-    borderRadius: 12,
-    marginVertical: 8,
-    // Тінь для iOS
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    // Тінь для Android
-    elevation: 2,
-    borderWidth: 2,
-    borderColor: "#ffffffff",
-  },
-  pressed: {
-    backgroundColor: "#F2F2F7",
-    opacity: 0.9,
-  },
-  leftContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    flex: 1,
-  },
-  iconContainer: {
-    marginRight: 12,
-    backgroundColor: "#EBF5FF",
-    padding: 8,
-    borderRadius: 8,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: colors.dark.background,
-  },
-  subtitle: {
-    fontSize: 13,
-    color: colors.dark.background,
-    marginTop: 2,
-  },
-  iconColor: {
-    color: colors.light.icon,
-  },
-});
+const styles = (theme: Theme) =>
+  StyleSheet.create({
+    card: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      backgroundColor: theme.colors.shadow,
+      padding: 16,
+      borderRadius: 12,
+      marginVertical: 16,
+      shadowColor: theme.colors.shadow,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.05,
+      shadowRadius: 8,
+      elevation: 2,
+      borderWidth: 2,
+      borderColor: "#ffffffff",
+    },
+    pressed: {
+      backgroundColor: theme.colors.background,
+      opacity: 0.9,
+    },
+    leftContent: {
+      flexDirection: "row",
+      alignItems: "center",
+      flex: 1,
+    },
+    iconContainer: {
+      marginRight: 12,
+      backgroundColor: theme.colors.background,
+      padding: 8,
+      borderRadius: 8,
+    },
+    textContainer: {
+      marginLeft: 24,
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: "600",
+      color: theme.colors.background,
+    },
+    subtitle: {
+      fontSize: 13,
+      color: theme.colors.background,
+      marginTop: 2,
+    },
+    iconColor: {
+      color: theme.colors.surface,
+    },
+  });
 
 export default styles;

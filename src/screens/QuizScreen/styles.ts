@@ -1,14 +1,24 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    paddingTop: 60,
-    backgroundColor: "#121212",
-  },
-  category: { color: "#1DB954", fontWeight: "700" },
-  question: { color: "#fff", fontSize: 20, fontWeight: "800" },
-});
+import { Theme } from "../../styles";
 
-export default styles;
+const createStyles = (theme: Theme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 20,
+      paddingTop: 60,
+      backgroundColor: theme.colors.background,
+    },
+    category: {
+      color: theme.colors.accent,
+      fontWeight: "700",
+    },
+    question: {
+      color: theme.colors.text,
+      fontSize: 20,
+      fontWeight: "800",
+    },
+  });
+
+export default createStyles;

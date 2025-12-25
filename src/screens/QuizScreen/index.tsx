@@ -3,11 +3,16 @@ import { Image } from "expo-image";
 import React from "react";
 import { Text, View } from "react-native";
 
-import styles from "./styles";
+import { useTheme } from "../../styles";
+
+import createStyles from "./styles";
 
 export function QuizPlayScreen() {
   const route = useRoute<any>();
   const { quizId } = route.params;
+
+  const theme = useTheme();
+  const styles = createStyles(theme);
 
   return (
     <View style={styles.container}>

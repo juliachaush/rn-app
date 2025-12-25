@@ -12,7 +12,7 @@ type Props = {
   hasBackButton?: boolean;
 };
 
-export default function BackButtonHeader({
+export default function BackButton({
   title,
   titleStyle,
   rightElement,
@@ -34,4 +34,4 @@ export default function BackButtonHeader({
   );
 }
 
-BackButtonHeader.displayName = "BackButtonHeader";
+BackButton.displayName = "BackButton";

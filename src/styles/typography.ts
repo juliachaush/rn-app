@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const typography = StyleSheet.create({
+export const typography = StyleSheet.create({
   h6: {
     fontSize: 22,
     fontWeight: 600,
@@ -29,4 +29,3 @@ const typography = StyleSheet.create({
     fontWeight: "400",
   },
 });
-export default typography;

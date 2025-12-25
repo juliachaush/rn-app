@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import LayoutWithHeader from "../../src/layouts/LayoutWithHeader";
+import BackButtonLayout from "../../src/layouts/BackButtonLayout";
 import { QuizPlayScreen } from "../../src/screens";
 
 export interface Question {
@@ -13,11 +13,11 @@ export interface Question {
 
 export default function QuizPlayPage() {
   return (
-    <LayoutWithHeader>
+    <BackButtonLayout>
       <View style={styles.container}>
         <QuizPlayScreen />
       </View>
-    </LayoutWithHeader>
+    </BackButtonLayout>
   );
 }
 

@@ -2,7 +2,7 @@ import { type PropsWithChildren, ReactNode, forwardRef } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import BackButtonHeader from "../../components/BackButtonHeader";
+import BackButtonHeader from "../../components/BackButton";
 
 import styles from "./styles";
 
@@ -12,7 +12,7 @@ type Props = {
   isScroll?: boolean;
 } & PropsWithChildren;
 
-const LayoutWithHeader = forwardRef<ScrollView, Props>(
+const BackButtonLayout = forwardRef<ScrollView, Props>(
   ({ title, topElement, isScroll = true, children }, ref) => {
     return (
       <SafeAreaView>
@@ -41,6 +41,6 @@ const LayoutWithHeader = forwardRef<ScrollView, Props>(
   },
 );
 
-export default LayoutWithHeader;
+export default BackButtonLayout;
 
-LayoutWithHeader.displayName = "LayoutWithHeader";
+BackButtonLayout.displayName = "BackButtonLayout";

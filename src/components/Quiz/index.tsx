@@ -3,7 +3,9 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
-import styles from "./style";
+import { useTheme } from "../../styles";
+
+import createStyles from "./styles";
 
 type Props = {
   id: string;
@@ -14,6 +16,8 @@ type Props = {
 
 export const QuizCard = ({ id, title, description, image }: Props) => {
   const router = useRouter();
+  const theme = useTheme();
+  const styles = createStyles(theme);
 
   const handlePress = () => {
     router.push({
@@ -27,7 +31,10 @@ export const QuizCard = ({ id, title, description, image }: Props) => {
       onPress={handlePress}
       style={({ pressed }) => [styles.cardContainer, pressed && styles.pressed]}
     >
-      <LinearGradient colors={["#1DB954", "#0f3d2e"]} style={styles.gradient}>
+      <LinearGradient
+        colors={[theme.colors.accent, theme.colors.darkAccent]}
+        style={styles.gradient}
+      >
         <View style={styles.row}>
           <Image source={image} style={styles.image} resizeMode="contain" />
 

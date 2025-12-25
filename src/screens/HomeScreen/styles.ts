@@ -1,30 +1,31 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    padding: 16,
-    paddingTop: 60,
-    backgroundColor: "#121212",
-  },
+import { Theme } from "../../styles";
 
-  center: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#121212",
-  },
+const createStyles = (theme: Theme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      width: "100%",
+      padding: 16,
+      paddingTop: 24,
+      backgroundColor: theme.colors.background,
+    },
+    center: {
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: theme.colors.background,
+    },
+    title: {
+      color: theme.colors.accent,
+      marginBottom: 10,
+      marginTop: 24,
+      fontWeight: "900",
+      fontSize: 16,
+      textTransform: "uppercase",
+      letterSpacing: 0.8,
+      textAlign: "center",
+    },
+  });
 
-  title: {
-    color: "#1DB954",
-    marginBottom: 10,
-    marginTop: 24,
-    fontWeight: "900",
-    fontSize: 16,
-    textTransform: "uppercase",
-    letterSpacing: 0.8,
-    textAlign: "center",
-  },
-});
-
-export default styles;
+export default createStyles;
