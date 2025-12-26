@@ -1,6 +1,8 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import React from "react";
-import { FlatList, Pressable, Text, View } from "react-native";
+import React, { useRef } from "react";
+import { Animated, Pressable, Text, View } from "react-native";
+
+import { QuizCard } from "../../src/components";
 
 type Quiz = {
   id: string;
@@ -20,6 +22,7 @@ type LevelId = keyof typeof allQuizzes;
 export default function LevelQuizzesScreen() {
   const router = useRouter();
   const { levelId } = useLocalSearchParams<{ levelId: LevelId }>();
+  const scaleAnim = useRef(new Animated.Value(1)).current;
 
   if (!levelId) {
     return <Text>Level not found</Text>;
@@ -27,31 +30,52 @@ export default function LevelQuizzesScreen() {
 
   const quizzes = allQuizzes[levelId];
 
+  const handlePress = (id: string) => {
+    Animated.sequence([
+      Animated.timing(scaleAnim, {
+        toValue: 0.95,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+    ]).start(() => router.push(`/quiz/${id}`));
+  };
+
   return (
     <View style={{ flex: 1, padding: 16 }}>
       <Text style={{ fontSize: 24, marginBottom: 16 }}>
         Quizzes for Level {levelId}
       </Text>
 
-      <FlatList<Quiz>
-        data={quizzes}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Pressable
-            onPress={() => router.push(`/quiz/${item.id}`)}
+      {["1", "2"].map((id) => (
+        <Pressable key={id} onPress={() => handlePress(id)}>
+          <Animated.View
             style={{
-              padding: 16,
-              marginBottom: 12,
-              backgroundColor: "#1DB954",
-              borderRadius: 12,
+              transform: [{ scale: scaleAnim }],
+              marginHorizontal: 16,
             }}
           >
-            <Text style={{ color: "white", fontWeight: "700" }}>
-              {item.title}
-            </Text>
-          </Pressable>
-        )}
-      />
+            <QuizCard
+              id={id}
+              title={id === "1" ? "React Native Basics" : "Native Modules"}
+              description={
+                id === "1"
+                  ? "Learn components and styles"
+                  : "Location Camera Sound"
+              }
+              image={
+                id === "1"
+                  ? require("../../src/images/mascot-one.jpg")
+                  : require("../../src/images/mascot_puppy.jpg")
+              }
+            />
+          </Animated.View>
+        </Pressable>
+      ))}
     </View>
   );
 }

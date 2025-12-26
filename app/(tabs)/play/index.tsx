@@ -13,7 +13,6 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import ProgressWheel from "../../../src/components/Progress";
-import { QuizCard } from "../../../src/components/Quiz";
 
 const levels = [
   { id: "1", title: "Level 1" },
@@ -31,20 +30,20 @@ export default function PlayScreen() {
     router.push(`/level/${levelId}`);
   };
 
-  const handlePress = (id: string) => {
-    Animated.sequence([
-      Animated.timing(scaleAnim, {
-        toValue: 0.95,
-        duration: 100,
-        useNativeDriver: true,
-      }),
-      Animated.timing(scaleAnim, {
-        toValue: 1,
-        duration: 100,
-        useNativeDriver: true,
-      }),
-    ]).start(() => router.push(`/quiz/${id}`));
-  };
+  // const handlePress = (id: string) => {
+  //   Animated.sequence([
+  //     Animated.timing(scaleAnim, {
+  //       toValue: 0.95,
+  //       duration: 100,
+  //       useNativeDriver: true,
+  //     }),
+  //     Animated.timing(scaleAnim, {
+  //       toValue: 1,
+  //       duration: 100,
+  //       useNativeDriver: true,
+  //     }),
+  //   ]).start(() => router.push(`/quiz/${id}`));
+  // };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
@@ -55,7 +54,7 @@ export default function PlayScreen() {
 
         <Text style={styles.headText}>Your daily quizzes</Text>
 
-        {["1", "2"].map((id) => (
+        {/* {["1", "2"].map((id) => (
           <Pressable key={id} onPress={() => handlePress(id)}>
             <Animated.View
               style={{
@@ -79,7 +78,7 @@ export default function PlayScreen() {
               />
             </Animated.View>
           </Pressable>
-        ))}
+        ))} */}
       </ScrollView>
       <FlatList
         data={levels}
