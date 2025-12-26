@@ -35,3 +35,30 @@ Android Emulator (npm run android)
 iOS Simulator (npm run ios)
 Web (npm run web)
 Expo Go (scan the QR code from npm start)
+
+# Local Server – API for Quizzes 🖥️
+
+## 1. Go to the server folder
+
+```bash
+cd server
+```
+
+## 2. Install dependencies
+
+```bash
+npm install
+```
+
+## 3. Create a .env.local file
+
+Add your local IP and port for the API:
+
+PORT=3001
+BASE_URL=http://192.168.X.X:3001
+
+## 4. Start the server
+
+```bash
+npm run start
+```
