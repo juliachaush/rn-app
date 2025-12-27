@@ -6,7 +6,7 @@ import { HapticTab } from "../../src/components/Tab";
 import { useTheme } from "../../src/styles/theme/themeProvider";
 
 export default function TabLayout() {
-  const theme = useTheme(); // отримуємо актуальну тему (light/dark)
+  const theme = useTheme();
 
   return (
     <Tabs
@@ -27,7 +27,7 @@ export default function TabLayout() {
           title: "Home",
           tabBarIcon: ({ color }) => (
             <Image
-              source={require("../../src/icons/star-outline-1.png")}
+              source={require("../../assets/icons/star-outline.png")}
               style={{ width: 24, height: 24, tintColor: color }}
             />
           ),
@@ -40,7 +40,7 @@ export default function TabLayout() {
           title: "Play",
           tabBarIcon: ({ color }) => (
             <Image
-              source={require("../../src/icons/extension-puzzle-outline-1.png")}
+              source={require("../../assets/icons/extension-puzzle-outline.png")}
               style={{ width: 24, height: 24, tintColor: color }}
             />
           ),
@@ -53,7 +53,7 @@ export default function TabLayout() {
           title: "Explore",
           tabBarIcon: ({ color }) => (
             <Image
-              source={require("../../src/icons/book-outline-1.png")}
+              source={require("../../assets/icons/book-outline.png")}
               style={{ width: 24, height: 24, tintColor: color }}
             />
           ),
@@ -66,7 +66,7 @@ export default function TabLayout() {
           title: "Review",
           tabBarIcon: ({ color }) => (
             <Image
-              source={require("../../src/icons/star-outline-1.png")}
+              source={require("../../assets/icons/star-outline.png")}
               style={{ width: 24, height: 24, tintColor: color }}
             />
           ),
@@ -79,7 +79,7 @@ export default function TabLayout() {
           title: "Profile",
           tabBarIcon: ({ color }) => (
             <Image
-              source={require("../../src/icons/person-outline-1.png")}
+              source={require("../../assets/icons/person-outline.png")}
               style={{ width: 24, height: 24, tintColor: color }}
             />
           ),

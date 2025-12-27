@@ -1,19 +1,19 @@
 import { Request, Response, Router } from "express";
 
-import quizzesData from "../data/quizzes.json";
+import quizzes from "../data/quizzes.json";
 import { QuizzesData } from "../types/quiz";
 
 const router = Router();
-const quizzes = quizzesData as QuizzesData;
+const quizzesData = quizzes as QuizzesData;
 
-router.get("/:levelId", (req: Request, res: Response) => {
+router.get("/quizzes", (req: Request, res: Response) => {
   const levelId = req.params.levelId;
 
-  if (Number.isNaN(levelId)) {
-    return res.status(400).json({ message: "Invalid levelId" });
+  if (!levelId) {
+    return res.status(400).json({ message: "levelId is required" });
   }
 
-  const result = quizzes.quizzes.filter((quiz) => quiz.levelId === levelId);
+  const result = quizzesData.quizzes.filter((quiz) => quiz.levelId === levelId);
 
   res.status(200).json(result);
 });

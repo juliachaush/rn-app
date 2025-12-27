@@ -9,10 +9,12 @@ interface LevelResult {
 }
 
 interface UserLevelResultsState {
+  currentLevel: string;
   results: LevelResult[];
 }
 
 const initialState: UserLevelResultsState = {
+  currentLevel: "",
   results: [],
 };
 
@@ -38,9 +40,16 @@ const userLevelResultsSlice = createSlice({
         state.results.push(action.payload);
       }
     },
+    updateCurrentLevel(state, action: PayloadAction<string>) {
+      state.currentLevel = action.payload;
+    },
   },
 });
 
-export const { addLevelResult, clearLevelResults, updateLevelResult } =
-  userLevelResultsSlice.actions;
+export const {
+  addLevelResult,
+  clearLevelResults,
+  updateLevelResult,
+  updateCurrentLevel,
+} = userLevelResultsSlice.actions;
 export default userLevelResultsSlice.reducer;

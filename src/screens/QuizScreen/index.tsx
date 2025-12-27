@@ -12,16 +12,16 @@ export function QuizPlayScreen() {
   const { quizId } = route.params;
 
   const theme = useTheme();
-  const styles = createStyles(theme);
+  const cs = createStyles(theme);
 
   return (
-    <View style={styles.container}>
+    <View style={cs.container}>
       <Image
-        source={require("../../images/cookie.png")}
+        source={require("../../../assets/images/cookie.png")}
         style={{ width: 100, height: 100, alignSelf: "center" }}
       />
-      <Text style={styles.category}>Quiz id: {quizId}</Text>
-      <Text style={styles.question}>Вопрос будет здесь…</Text>
+      <Text style={cs.category}>Quiz id: {quizId}</Text>
+      <Text style={cs.question}>Вопрос будет здесь…</Text>
     </View>
   );
 }

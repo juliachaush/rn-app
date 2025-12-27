@@ -1,0 +1,54 @@
+import { useEffect, useState } from "react";
+
+import { apiFetch } from "../services/api/api";
+import { LevelPreview } from "../types/quiz";
+
+type State = {
+  data: LevelPreview[] | [];
+  loading: boolean;
+  error: string | null;
+};
+
+export function useLevels() {
+  const [state, setState] = useState<State>({
+    data: [],
+    loading: true,
+    error: null,
+  });
+
+  useEffect(() => {
+    let active = true;
+
+    const fetchLevels = async () => {
+      setState((s) => ({ ...s, loading: true, error: null }));
+
+      try {
+        const data = await apiFetch<LevelPreview[]>("/levels");
+
+        if (active) {
+          setState({
+            data,
+            loading: false,
+            error: null,
+          });
+        }
+      } catch (e) {
+        if (active) {
+          setState({
+            data: [],
+            loading: false,
+            error: e instanceof Error ? e.message : "Unknown error",
+          });
+        }
+      }
+    };
+
+    fetchLevels();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return state;
+}

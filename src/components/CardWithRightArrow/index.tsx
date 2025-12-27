@@ -27,7 +27,7 @@ export const MenuCard = ({
 }: MenuCardProps) => {
   const router = useRouter();
   const theme = useTheme();
-  const styles = createStyles(theme);
+  const cs = createStyles(theme);
 
   const handlePress = () => {
     router.push({
@@ -40,25 +40,25 @@ export const MenuCard = ({
     <Pressable
       onPress={handlePress}
       style={({ pressed }) => [
-        { ...styles.card, backgroundColor: cardColor || theme.colors.surface },
-        pressed && styles.pressed,
+        { ...cs.card, backgroundColor: cardColor || theme.colors.surface },
+        pressed && cs.pressed,
       ]}
     >
-      <View style={styles.leftContent}>
+      <View style={cs.leftContent}>
         {isImage && (
           <Image
-            source={require("../../icons/star.png")}
+            source={require("../../../assets/icons/star.png")}
             style={{ width: 60, height: 60, alignSelf: "center" }}
           />
         )}
         {iconName && (
-          <View style={styles.iconContainer}>
+          <View style={cs.iconContainer}>
             <Ionicons name={iconName} size={22} color={theme.colors.accent} />
           </View>
         )}
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>{title}</Text>
-          {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
+        <View style={cs.textContainer}>
+          <Text style={cs.title}>{title}</Text>
+          {subtitle && <Text style={cs.subtitle}>{subtitle}</Text>}
         </View>
       </View>
 

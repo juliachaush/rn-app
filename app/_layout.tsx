@@ -2,7 +2,9 @@ import { ThemeProvider } from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
+import { Provider } from "react-redux";
 
+import { store } from "../src/store";
 import { getNavigationTheme } from "../src/styles/theme/navigationTheme";
 import { AppThemeProvider, useTheme } from "../src/styles/theme/themeProvider";
 
@@ -26,8 +28,10 @@ function NavigationLayout() {
 
 export default function RootLayout() {
   return (
-    <AppThemeProvider>
-      <NavigationLayout />
-    </AppThemeProvider>
+    <Provider store={store}>
+      <AppThemeProvider>
+        <NavigationLayout />
+      </AppThemeProvider>
+    </Provider>
   );
 }

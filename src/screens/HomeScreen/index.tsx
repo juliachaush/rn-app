@@ -8,7 +8,7 @@ import createStyles from "./styles";
 
 export function HomeScreen() {
   const theme = useTheme();
-  const styles = createStyles(theme);
+  const cs = createStyles(theme);
 
   const date = new Date();
   const longDate = new Intl.DateTimeFormat("en-GB", {
@@ -16,7 +16,7 @@ export function HomeScreen() {
   }).format(date);
 
   return (
-    <View style={styles.container}>
+    <View style={cs.container}>
       {["1"].map((id) => (
         <View key={id}>
           <MenuCard

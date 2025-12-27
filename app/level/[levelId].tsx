@@ -1,34 +1,29 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useRef } from "react";
-import { Animated, Pressable, Text, View } from "react-native";
+import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { QuizCard } from "../../src/components";
-
-type Quiz = {
-  id: string;
-  title: string;
-};
-
-const allQuizzes = {
-  "1": [
-    { id: "q1", title: "React Basics" },
-    { id: "q2", title: "JS Fundamentals" },
-  ],
-  "2": [{ id: "q3", title: "Advanced React" }],
-} as const;
-
-type LevelId = keyof typeof allQuizzes;
+import { useQuizzesByLevel } from "../../src/hooks/useQuizzesByLevel";
+import { Theme } from "../../src/styles/theme/theme";
+import { useTheme } from "../../src/styles/theme/themeProvider";
 
 export default function LevelQuizzesScreen() {
   const router = useRouter();
-  const { levelId } = useLocalSearchParams<{ levelId: LevelId }>();
+  const { levelId } = useLocalSearchParams<{ levelId: string }>();
   const scaleAnim = useRef(new Animated.Value(1)).current;
+  const theme = useTheme();
+  const cs = styles(theme);
 
+  const { data: quizzes, loading, error } = useQuizzesByLevel(levelId);
+  const data = quizzes?.[0] ?? { quizzes: [] };
+
+  console.log("datad", quizzes);
   if (!levelId) {
     return <Text>Level not found</Text>;
   }
 
-  const quizzes = allQuizzes[levelId];
+  if (loading) return <Text style={cs.loadingText}>Loading...</Text>;
+  if (error) return <Text style={cs.loadingText}>Error: {error}</Text>;
 
   const handlePress = (id: string) => {
     Animated.sequence([
@@ -51,8 +46,8 @@ export default function LevelQuizzesScreen() {
         Quizzes for Level {levelId}
       </Text>
 
-      {["1", "2"].map((id) => (
-        <Pressable key={id} onPress={() => handlePress(id)}>
+      {data?.quizzes?.map((quizz) => (
+        <Pressable key={quizz.id} onPress={() => handlePress(quizz.id)}>
           <Animated.View
             style={{
               transform: [{ scale: scaleAnim }],
@@ -60,18 +55,10 @@ export default function LevelQuizzesScreen() {
             }}
           >
             <QuizCard
-              id={id}
-              title={id === "1" ? "React Native Basics" : "Native Modules"}
-              description={
-                id === "1"
-                  ? "Learn components and styles"
-                  : "Location Camera Sound"
-              }
-              image={
-                id === "1"
-                  ? require("../../src/images/mascot-one.jpg")
-                  : require("../../src/images/mascot_puppy.jpg")
-              }
+              id={quizz.id}
+              title={quizz.title}
+              description={quizz.title}
+              image={require("../../assets/images/mascot_puppy.jpg")}
             />
           </Animated.View>
         </Pressable>
@@ -79,3 +66,13 @@ export default function LevelQuizzesScreen() {
     </View>
   );
 }
+
+const styles = (theme: Theme) =>
+  StyleSheet.create({
+    loadingText: {
+      color: theme.colors.background,
+      fontSize: 18,
+      textAlign: "center",
+      marginTop: 50,
+    },
+  });

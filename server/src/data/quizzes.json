@@ -1,7 +1,7 @@
 {
   "quizzes": [
     {
-      "id": "rn-l1-easy-1",
+      "id": "rn-l1-easy",
       "levelId": "1",
       "title": "React Native Basics",
       "difficulty": "easy",
@@ -10,86 +10,237 @@
         "image": "badge_beginner.png",
         "description": "You completed your first React Native quiz!"
       },
-      "questions": [
+      "quizzes": [
         {
-          "id": "q1",
-          "question": "What command is used to create a new Expo project?",
-          "options": [
-            "npm init rn",
-            "npx expo init",
-            "expo start",
-            "react-native new"
-          ],
-          "correctOptionIndex": 1
+          "id": "1",
+          "title": "React Native Basics 1",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What command is used to create a new Expo project?",
+              "options": [
+                "npm init rn",
+                "npx expo init",
+                "expo start",
+                "react-native new"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which component replaces div in React Native?",
+              "options": ["Box", "Section", "View", "Container"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "How are styles defined in React Native?",
+              "options": [
+                "CSS files",
+                "Inline HTML",
+                "StyleSheet.create()",
+                "SCSS"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which component displays text?",
+              "options": ["Label", "Text", "Span", "Paragraph"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "Which hook manages state?",
+              "options": ["useData", "useValue", "useState", "useRef"],
+              "correctOptionIndex": 2
+            }
+          ]
         },
         {
-          "id": "q2",
-          "question": "Which component replaces div in React Native?",
-          "options": ["Box", "Section", "View", "Container"],
-          "correctOptionIndex": 2
+          "id": "2",
+          "title": "React Native Basics 2",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "React Native apps are written in?",
+              "options": ["Java", "Swift", "JavaScript", "Kotlin"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q2",
+              "question": "Which component handles touches?",
+              "options": ["Button", "Pressable", "Touchable", "Click"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which component displays images?",
+              "options": ["Img", "Picture", "Image", "Photo"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "What file usually contains the root component?",
+              "options": ["index.js", "main.ts", "app.json", "root.js"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "Which platforms does React Native support?",
+              "options": [
+                "Web only",
+                "iOS only",
+                "Android only",
+                "iOS and Android"
+              ],
+              "correctOptionIndex": 3
+            }
+          ]
         },
         {
-          "id": "q3",
-          "question": "How are styles defined in React Native?",
-          "options": [
-            "CSS files",
-            "Inline HTML",
-            "StyleSheet.create()",
-            "SCSS"
-          ],
-          "correctOptionIndex": 2
+          "id": "3",
+          "title": "React Native Basics 3",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which component is used for lists?",
+              "options": ["ListView", "FlatList", "ScrollView", "SectionList"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which hook runs code on component mount?",
+              "options": ["useEffect", "useState", "useLayoutEffect", "useRef"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "How to make a component reusable?",
+              "options": [
+                "Copy it",
+                "Use props",
+                "Global variables",
+                "Inline functions"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "Which component wraps other components for layout?",
+              "options": ["Container", "View", "Section", "Box"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "Which platform supports Expo Go?",
+              "options": ["iOS", "Android", "Web", "All of the above"],
+              "correctOptionIndex": 3
+            }
+          ]
         },
         {
-          "id": "q4",
-          "question": "Which component displays text?",
-          "options": ["Label", "Text", "Span", "Paragraph"],
-          "correctOptionIndex": 1
+          "id": "4",
+          "title": "React Native Basics 4",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is JSX?",
+              "options": [
+                "A style",
+                "A JavaScript syntax",
+                "A library",
+                "A hook"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "How to handle events in React Native?",
+              "options": ["onClick", "onPress", "onTap", "onTouch"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which component handles scrolling?",
+              "options": ["FlatList", "ScrollView", "View", "SectionList"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "How to style text?",
+              "options": [
+                "<Text style={}>",
+                "<View style={}>",
+                "<Label>",
+                "<Paragraph>"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "What command runs Expo project?",
+              "options": [
+                "npm run",
+                "expo start",
+                "react-native run",
+                "npm build"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q5",
-          "question": "Which hook manages state?",
-          "options": ["useData", "useValue", "useState", "useRef"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q6",
-          "question": "React Native apps are written in?",
-          "options": ["Java", "Swift", "JavaScript", "Kotlin"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q7",
-          "question": "Which component handles touches?",
-          "options": ["Button", "Pressable", "Touchable", "Click"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q8",
-          "question": "Which component displays images?",
-          "options": ["Img", "Picture", "Image", "Photo"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q9",
-          "question": "What file usually contains the root component?",
-          "options": ["index.js", "main.ts", "app.json", "root.js"],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q10",
-          "question": "Which platforms does React Native support?",
-          "options": [
-            "Web only",
-            "iOS only",
-            "Android only",
-            "iOS and Android"
-          ],
-          "correctOptionIndex": 3
+          "id": "5",
+          "title": "React Native Basics 5",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which hook is used for refs?",
+              "options": ["useRef", "useState", "useEffect", "useCallback"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "Which component is touchable?",
+              "options": ["View", "Text", "Pressable", "Image"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "What is state?",
+              "options": [
+                "Props",
+                "Local data",
+                "Global data",
+                "Component style"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "Which component shows images?",
+              "options": ["Img", "Image", "Picture", "Photo"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "How to run a React Native app on simulator?",
+              "options": [
+                "npm run ios",
+                "expo start",
+                "react-native start",
+                "npm run android"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         }
       ]
     },
+
     {
-      "id": "rn-l2-medium-1",
+      "id": "rn-l2-medium",
       "levelId": "2",
       "title": "Layouts & Styling",
       "difficulty": "medium",
@@ -98,76 +249,242 @@
         "image": "style_master.png",
         "description": "You understand Flexbox and layouts!"
       },
-      "questions": [
+      "quizzes": [
         {
-          "id": "q1",
-          "question": "Default flexDirection in React Native?",
-          "options": ["row", "column", "row-reverse", "column-reverse"],
-          "correctOptionIndex": 1
+          "id": "1",
+          "title": "Layouts & Styling 1",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Default flexDirection in React Native?",
+              "options": ["row", "column", "row-reverse", "column-reverse"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which property aligns items vertically?",
+              "options": ["justifyContent", "alignItems", "flex", "position"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which unit is used for dimensions?",
+              "options": ["px", "em", "dp", "numbers"],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q4",
+              "question": "How do you create reusable styles?",
+              "options": ["CSS", "StyleSheet.create", "styled()", "theme.css"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "Which prop controls spacing between elements?",
+              "options": ["gap", "margin", "padding", "space"],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q2",
-          "question": "Which property aligns items vertically?",
-          "options": ["justifyContent", "alignItems", "flex", "position"],
-          "correctOptionIndex": 1
+          "id": "2",
+          "title": "Layouts & Styling 2",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "How to center items horizontally?",
+              "options": [
+                "alignItems:center",
+                "justifyContent:center",
+                "margin:auto",
+                "flex:center"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "What does flex:1 do?",
+              "options": ["Fixed size", "Hidden", "Fill space", "Shrink"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "Which prop controls width?",
+              "options": ["width", "w", "size", "flex"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which prop sets element height?",
+              "options": ["h", "height", "size", "lineHeight"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "How to apply multiple styles?",
+              "options": [
+                "Array of styles",
+                "Inline only",
+                "CSS classes",
+                "Theme"
+              ],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q3",
-          "question": "Which unit is used for dimensions?",
-          "options": ["px", "em", "dp", "numbers"],
-          "correctOptionIndex": 3
+          "id": "3",
+          "title": "Layouts & Styling 3",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which component handles safe areas?",
+              "options": ["SafeView", "SafeAreaView", "AreaView", "ScreenView"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which prop controls element visibility?",
+              "options": ["display", "hidden", "visible", "opacity"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "How to apply conditional styles?",
+              "options": [
+                "if inside StyleSheet",
+                "Array of styles",
+                "CSS classes",
+                "Themes only"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "What property adds margin outside element?",
+              "options": ["padding", "margin", "gap", "space"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "What property adds padding inside element?",
+              "options": ["padding", "margin", "gap", "space"],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q4",
-          "question": "How do you create reusable styles?",
-          "options": ["CSS", "StyleSheet.create", "styled()", "theme.css"],
-          "correctOptionIndex": 1
+          "id": "4",
+          "title": "Layouts & Styling 4",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which property wraps content in row?",
+              "options": [
+                "flexDirection:row",
+                "flexWrap:row",
+                "justifyContent:row",
+                "alignItems:row"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "Which property aligns content along main axis?",
+              "options": [
+                "alignItems",
+                "justifyContent",
+                "flexDirection",
+                "flex"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which property aligns cross-axis?",
+              "options": [
+                "alignItems",
+                "justifyContent",
+                "flexDirection",
+                "flex"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "What does flexWrap do?",
+              "options": [
+                "Wrap items",
+                "Shrink items",
+                "Align items",
+                "Hide items"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "How to give fixed size?",
+              "options": ["flex:0", "flex:1", "flex:auto", "flex:grow"],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q5",
-          "question": "Which prop controls spacing between elements?",
-          "options": ["gap", "margin", "padding", "space"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q6",
-          "question": "What does flex: 1 mean?",
-          "options": ["Fixed size", "Hidden", "Fill available space", "Shrink"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q7",
-          "question": "Which position value works like CSS absolute?",
-          "options": ["fixed", "relative", "absolute", "static"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q8",
-          "question": "Which component handles safe areas?",
-          "options": ["SafeView", "SafeAreaView", "AreaView", "ScreenView"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q9",
-          "question": "Which prop controls element visibility?",
-          "options": ["display", "hidden", "visible", "opacity"],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q10",
-          "question": "How do you apply conditional styles?",
-          "options": [
-            "if inside StyleSheet",
-            "Array of styles",
-            "CSS classes",
-            "Themes only"
-          ],
-          "correctOptionIndex": 1
+          "id": "5",
+          "title": "Layouts & Styling 5",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which prop controls z-index?",
+              "options": ["elevation", "zIndex", "stack", "order"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which prop makes element absolute?",
+              "options": [
+                "position:absolute",
+                "absolute:true",
+                "layout:absolute",
+                "style:absolute"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "Which prop sets border radius?",
+              "options": [
+                "borderRadius",
+                "borderCurve",
+                "borderRound",
+                "radius"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which property sets background color?",
+              "options": ["bgColor", "background", "backgroundColor", "bg"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which prop hides element?",
+              "options": [
+                "display:none",
+                "hidden:true",
+                "opacity:0",
+                "visible:false"
+              ],
+              "correctOptionIndex": 0
+            }
+          ]
         }
       ]
     },
+
     {
-      "id": "rn-l3-medium-1",
+      "id": "rn-l3-medium",
       "levelId": "3",
       "title": "Navigation & Routing",
       "difficulty": "medium",
@@ -176,96 +493,257 @@
         "image": "navigator.png",
         "description": "You mastered navigation in React Native."
       },
-      "questions": [
+      "quizzes": [
         {
-          "id": "q1",
-          "question": "Most popular navigation library?",
-          "options": [
-            "expo-router",
-            "react-navigation",
-            "native-router",
-            "rn-router"
-          ],
-          "correctOptionIndex": 1
+          "id": "1",
+          "title": "Navigation 1",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Most popular navigation library?",
+              "options": [
+                "expo-router",
+                "react-navigation",
+                "native-router",
+                "rn-router"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "What is Stack Navigator?",
+              "options": [
+                "Tab layout",
+                "Screen history stack",
+                "Drawer menu",
+                "Modal"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which hook allows navigation?",
+              "options": ["useRoute", "usePath", "useNavigation", "useStack"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "What is a dynamic route?",
+              "options": [
+                "Fixed screen",
+                "Animated screen",
+                "Route with params",
+                "Lazy screen"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which navigator shows tabs?",
+              "options": ["Stack", "Drawer", "Bottom Tabs", "Modal"],
+              "correctOptionIndex": 2
+            }
+          ]
         },
         {
-          "id": "q2",
-          "question": "What is Stack Navigator?",
-          "options": [
-            "Tab layout",
-            "Screen history stack",
-            "Drawer menu",
-            "Modal"
-          ],
-          "correctOptionIndex": 1
+          "id": "2",
+          "title": "Navigation 2",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "How do you pass params?",
+              "options": ["props", "route.params", "state", "context"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which navigator slides from bottom?",
+              "options": ["Modal", "Stack", "Tabs", "Drawer"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "How do you go back?",
+              "options": ["pop()", "goBack()", "back()", "return()"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "What is initialRouteName?",
+              "options": [
+                "First screen",
+                "Last screen",
+                "Hidden screen",
+                "Default tab"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "What is deep linking?",
+              "options": [
+                "Internal routing",
+                "URL-based navigation",
+                "Animations",
+                "Auth flow"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q3",
-          "question": "Which hook allows navigation?",
-          "options": ["useRoute", "usePath", "useNavigation", "useStack"],
-          "correctOptionIndex": 2
+          "id": "3",
+          "title": "Navigation 3",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which navigator uses drawer menu?",
+              "options": ["Stack", "Drawer", "Tabs", "Modal"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which hook gives route info?",
+              "options": ["useRoute", "useNavigation", "usePath", "useStack"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "How to navigate programmatically?",
+              "options": [
+                "history.push",
+                "navigation.navigate",
+                "goTo()",
+                "route.move"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q4",
+              "question": "Which navigator allows swipe gestures?",
+              "options": ["Stack", "Drawer", "Tabs", "Modal"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which prop sets initial tab?",
+              "options": [
+                "initialRouteName",
+                "defaultTab",
+                "startScreen",
+                "firstTab"
+              ],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q4",
-          "question": "What is a dynamic route?",
-          "options": [
-            "Fixed screen",
-            "Animated screen",
-            "Route with params",
-            "Lazy screen"
-          ],
-          "correctOptionIndex": 2
+          "id": "4",
+          "title": "Navigation 4",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "What is screen options?",
+              "options": [
+                "Navigation config",
+                "Screen styling",
+                "Props",
+                "Hooks"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "How to hide header?",
+              "options": [
+                "headerShown:false",
+                "hideHeader:true",
+                "display:none",
+                "header:false"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "Which navigator is nested?",
+              "options": [
+                "Stack inside Drawer",
+                "Drawer inside Tab",
+                "Tab inside Modal",
+                "All"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q4",
+              "question": "Which prop customizes tab icon?",
+              "options": ["tabIcon", "icon", "tabBarIcon", "tabStyle"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which hook returns focused state?",
+              "options": [
+                "useFocus",
+                "useIsFocused",
+                "useFocused",
+                "useActive"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q5",
-          "question": "Which navigator shows tabs?",
-          "options": ["Stack", "Drawer", "Bottom Tabs", "Modal"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q6",
-          "question": "How do you pass params?",
-          "options": ["props", "route.params", "state", "context"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q7",
-          "question": "Which navigator slides from bottom?",
-          "options": ["Modal", "Stack", "Tabs", "Drawer"],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q8",
-          "question": "How do you go back?",
-          "options": ["pop()", "goBack()", "back()", "return()"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q9",
-          "question": "What is initialRouteName?",
-          "options": [
-            "First screen",
-            "Last screen",
-            "Hidden screen",
-            "Default tab"
-          ],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q10",
-          "question": "What is deep linking?",
-          "options": [
-            "Internal routing",
-            "URL-based navigation",
-            "Animations",
-            "Auth flow"
-          ],
-          "correctOptionIndex": 1
+          "id": "5",
+          "title": "Navigation 5",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which navigator supports modal presentation?",
+              "options": ["Stack", "Drawer", "Tabs", "Modal"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "How to navigate with params?",
+              "options": [
+                "props.params",
+                "navigation.navigate()",
+                "state",
+                "context"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which prop sets header title?",
+              "options": ["headerTitle", "title", "name", "screenTitle"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which navigator supports gestures?",
+              "options": ["Stack", "Drawer", "Tabs", "Modal"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "What is lazy loading screen?",
+              "options": [
+                "Load all screens",
+                "Load on demand",
+                "Animated screen",
+                "Hidden screen"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         }
       ]
     },
+
     {
-      "id": "rn-l4-hard-1",
+      "id": "rn-l4-hard",
       "levelId": "4",
       "title": "Performance & Optimization",
       "difficulty": "hard",
@@ -274,164 +752,510 @@
         "image": "performance.png",
         "description": "You optimized React Native apps!"
       },
-      "questions": [
+      "quizzes": [
         {
-          "id": "q1",
-          "question": "Which hook memoizes values?",
-          "options": ["useCallback", "useMemo", "useEffect", "useRef"],
-          "correctOptionIndex": 1
+          "id": "1",
+          "title": "Performance 1",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which hook memoizes values?",
+              "options": ["useCallback", "useMemo", "useEffect", "useRef"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which component optimizes large lists?",
+              "options": ["ScrollView", "FlatList", "View", "Map"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "What causes unnecessary re-renders?",
+              "options": [
+                "Inline functions",
+                "Memoization",
+                "Refs",
+                "Pure components"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which prop improves FlatList performance?",
+              "options": ["key", "renderItem", "getItemLayout", "extraData"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which hook memoizes callbacks?",
+              "options": ["useEffect", "useCallback", "useMemo", "useRef"],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q2",
-          "question": "Which component optimizes large lists?",
-          "options": ["ScrollView", "FlatList", "View", "Map"],
-          "correctOptionIndex": 1
+          "id": "2",
+          "title": "Performance 2",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which tool helps detect performance issues?",
+              "options": ["Redux", "Flipper", "Expo Go", "Metro"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "Which component avoids re-render?",
+              "options": ["PureComponent", "View", "Text", "ScrollView"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "Which prop disables re-render?",
+              "options": ["memo", "shouldUpdate", "React.memo", "useMemo"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "What improves animation performance?",
+              "options": ["JS thread", "Native driver", "setState", "Redux"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "What is the JS thread?",
+              "options": [
+                "UI rendering",
+                "Business logic execution",
+                "Native code",
+                "Styles"
+              ],
+              "correctOptionIndex": 1
+            }
+          ]
         },
         {
-          "id": "q3",
-          "question": "What causes unnecessary re-renders?",
-          "options": [
-            "Inline functions",
-            "Memoization",
-            "Refs",
-            "Pure components"
-          ],
-          "correctOptionIndex": 0
+          "id": "3",
+          "title": "Performance 3",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which hook prevents re-render of functions?",
+              "options": ["useMemo", "useCallback", "useEffect", "useRef"],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q2",
+              "question": "How to optimize images?",
+              "options": [
+                "Compress",
+                "Lazy load",
+                "Use placeholders",
+                "All of the above"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q3",
+              "question": "Which component is better for long lists?",
+              "options": ["FlatList", "ScrollView", "View", "SectionList"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which method avoids anonymous functions in JSX?",
+              "options": [
+                "Define outside",
+                "Inline only",
+                "Use refs",
+                "Use hooks"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "How to prevent re-render of child?",
+              "options": ["React.memo", "useEffect", "useState", "useRef"],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q4",
-          "question": "Which prop improves FlatList performance?",
-          "options": ["key", "renderItem", "getItemLayout", "extraData"],
-          "correctOptionIndex": 2
+          "id": "4",
+          "title": "Performance 4",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which prop improves FlatList scroll performance?",
+              "options": [
+                "initialNumToRender",
+                "data",
+                "keyExtractor",
+                "renderItem"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "What is virtualized list?",
+              "options": [
+                "Render all items",
+                "Render visible items only",
+                "Render none",
+                "Render hidden"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q3",
+              "question": "Which tool measures FPS?",
+              "options": [
+                "Flipper",
+                "React DevTools",
+                "Expo CLI",
+                "Redux DevTools"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which improves rendering speed?",
+              "options": [
+                "Inline styles",
+                "Memoization",
+                "Anonymous functions",
+                "Render loops"
+              ],
+              "correctOptionIndex": 1
+            },
+            {
+              "id": "q5",
+              "question": "What is JS bridge?",
+              "options": [
+                "Connect JS & Native",
+                "Async storage",
+                "UI layer",
+                "Animation driver"
+              ],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q5",
-          "question": "Which hook memoizes callbacks?",
-          "options": ["useEffect", "useCallback", "useMemo", "useRef"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q6",
-          "question": "Which tool helps detect performance issues?",
-          "options": ["Redux", "Flipper", "Expo Go", "Metro"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q7",
-          "question": "Which component avoids re-render?",
-          "options": ["PureComponent", "View", "Text", "ScrollView"],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q8",
-          "question": "Which prop disables re-render?",
-          "options": ["memo", "shouldUpdate", "React.memo", "useMemo"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q9",
-          "question": "What improves animation performance?",
-          "options": ["JS thread", "Native driver", "setState", "Redux"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q10",
-          "question": "What is the JS thread?",
-          "options": [
-            "UI rendering",
-            "Business logic execution",
-            "Native code",
-            "Styles"
-          ],
-          "correctOptionIndex": 1
+          "id": "5",
+          "title": "Performance 5",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which hook prevents heavy re-render?",
+              "options": ["useMemo", "useCallback", "useEffect", "useState"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "How to lazy load components?",
+              "options": [
+                "React.lazy",
+                "Suspense",
+                "Dynamic import",
+                "All of the above"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q3",
+              "question": "What is interaction manager?",
+              "options": [
+                "Schedules heavy tasks",
+                "UI rendering",
+                "Animation",
+                "State updates"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q4",
+              "question": "Which method reduces JS work?",
+              "options": [
+                "Move to Native",
+                "Inline styles",
+                "Redux",
+                "Context API"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "Which component avoids layout recalculation?",
+              "options": ["PureComponent", "View", "Text", "ScrollView"],
+              "correctOptionIndex": 0
+            }
+          ]
         }
       ]
     },
+
     {
-      "id": "rn-l5-hard-1",
+      "id": "rn-l5-expert",
       "levelId": "5",
-      "title": "Native Modules",
+      "title": "Advanced Topics & API",
       "difficulty": "hard",
       "gift": {
-        "title": "Native Hero",
-        "image": "native_hero.png",
-        "description": "You mastered native integrations!"
+        "title": "React Native Expert",
+        "image": "expert.png",
+        "description": "You mastered advanced React Native topics!"
       },
-      "questions": [
+      "quizzes": [
         {
-          "id": "q1",
-          "question": "Why use Native Modules?",
-          "options": [
-            "Styling",
-            "Access native APIs",
-            "Routing",
-            "State management"
-          ],
-          "correctOptionIndex": 1
+          "id": "1",
+          "title": "Advanced & API 1",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which library handles HTTP requests?",
+              "options": ["axios", "fetch", "superagent", "All"],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q2",
+              "question": "Which storage is async?",
+              "options": [
+                "AsyncStorage",
+                "LocalStorage",
+                "SessionStorage",
+                "Redux"
+              ],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q3",
+              "question": "Which method fetches API?",
+              "options": ["axios.get", "fetch", "Both", "XMLHttpRequest"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which hook fetches data on mount?",
+              "options": ["useEffect", "useState", "useMemo", "useCallback"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q5",
+              "question": "Which prop sets HTTP headers?",
+              "options": ["headers", "config", "options", "params"],
+              "correctOptionIndex": 0
+            }
+          ]
         },
         {
-          "id": "q2",
-          "question": "Which languages are used for Native Modules?",
-          "options": ["JS only", "Swift/Java", "C++ only", "HTML"],
-          "correctOptionIndex": 1
+          "id": "2",
+          "title": "Advanced & API 2",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which library handles local notifications?",
+              "options": [
+                "react-native-push",
+                "react-native-notifications",
+                "expo-notifications",
+                "All"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q2",
+              "question": "Which API handles device sensors?",
+              "options": [
+                "react-native-sensors",
+                "expo-sensors",
+                "NativeModules",
+                "All"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q3",
+              "question": "Which module accesses camera?",
+              "options": [
+                "react-native-camera",
+                "expo-camera",
+                "Both",
+                "ImagePicker"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which API handles geolocation?",
+              "options": [
+                "Geolocation",
+                "Location",
+                "Navigator.geolocation",
+                "All"
+              ],
+              "correctOptionIndex": 3
+            },
+            {
+              "id": "q5",
+              "question": "Which library handles deep linking?",
+              "options": ["react-navigation", "Linking", "Expo Linking", "All"],
+              "correctOptionIndex": 3
+            }
+          ]
         },
         {
-          "id": "q3",
-          "question": "What connects JS and native code?",
-          "options": ["Bridge", "Router", "Thread", "Hook"],
-          "correctOptionIndex": 0
+          "id": "3",
+          "title": "Advanced & API 3",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which API handles gestures?",
+              "options": [
+                "react-native-gesture-handler",
+                "PanResponder",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q2",
+              "question": "Which library helps with animations?",
+              "options": [
+                "react-native-reanimated",
+                "Animated",
+                "Both",
+                "Lottie"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "Which API accesses contacts?",
+              "options": [
+                "Expo Contacts",
+                "react-native-contacts",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which API handles file system?",
+              "options": [
+                "react-native-fs",
+                "expo-file-system",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which API handles permissions?",
+              "options": [
+                "PermissionsAndroid",
+                "expo-permissions",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            }
+          ]
         },
         {
-          "id": "q4",
-          "question": "What is JSI?",
-          "options": [
-            "Old bridge",
-            "New architecture interface",
-            "Expo API",
-            "Navigation"
-          ],
-          "correctOptionIndex": 1
+          "id": "4",
+          "title": "Advanced & API 4",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which API handles push notifications on iOS?",
+              "options": ["APNs", "Firebase", "Both", "None"],
+              "correctOptionIndex": 0
+            },
+            {
+              "id": "q2",
+              "question": "Which API handles push notifications on Android?",
+              "options": ["FCM", "Firebase", "Both", "None"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "Which API handles background tasks?",
+              "options": [
+                "react-native-background-task",
+                "expo-task-manager",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which API handles Bluetooth?",
+              "options": [
+                "react-native-ble-plx",
+                "Expo Bluetooth",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which API handles sensors like accelerometer?",
+              "options": [
+                "expo-sensors",
+                "react-native-sensors",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            }
+          ]
         },
         {
-          "id": "q5",
-          "question": "Which API accesses camera?",
-          "options": ["Media", "CameraModule", "Expo Camera", "NativeImage"],
-          "correctOptionIndex": 2
-        },
-        {
-          "id": "q6",
-          "question": "Which module handles sensors?",
-          "options": ["expo-sensors", "expo-media", "expo-ui", "expo-data"],
-          "correctOptionIndex": 0
-        },
-        {
-          "id": "q7",
-          "question": "What is TurboModules?",
-          "options": ["Old API", "New native system", "CSS engine", "Router"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q8",
-          "question": "Which thread handles UI?",
-          "options": ["JS thread", "UI thread", "Native thread", "Main hook"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q9",
-          "question": "What improves native performance?",
-          "options": ["Redux", "JSI", "Context", "Hooks"],
-          "correctOptionIndex": 1
-        },
-        {
-          "id": "q10",
-          "question": "When should you write native code?",
-          "options": [
-            "Always",
-            "Never",
-            "When JS is not enough",
-            "For styling"
-          ],
-          "correctOptionIndex": 2
+          "id": "5",
+          "title": "Advanced & API 5",
+          "questions": [
+            {
+              "id": "q1",
+              "question": "Which hook handles focus events?",
+              "options": ["useFocusEffect", "useIsFocused", "Both", "None"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q2",
+              "question": "Which hook detects screen orientation?",
+              "options": [
+                "useDimensions",
+                "useWindowDimensions",
+                "Both",
+                "None"
+              ],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q3",
+              "question": "Which library handles authentication?",
+              "options": ["Firebase Auth", "Auth0", "Both", "None"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q4",
+              "question": "Which hook handles device theme?",
+              "options": ["useColorScheme", "useTheme", "Both", "None"],
+              "correctOptionIndex": 2
+            },
+            {
+              "id": "q5",
+              "question": "Which hook optimizes re-renders?",
+              "options": ["useMemo", "useCallback", "Both", "None"],
+              "correctOptionIndex": 2
+            }
+          ]
         }
       ]
     }

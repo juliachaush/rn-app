@@ -43,7 +43,9 @@ export default function ProgressWheel({
 
   return (
     <ImageBackground
-      source={backgroundImage || require("../../images/background.jpg")}
+      source={
+        backgroundImage || require("../../../assets/images/background.jpg")
+      }
       style={styles.container}
       imageStyle={{ borderRadius: 24 }}
     >

@@ -1,120 +1,157 @@
-import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import React, { useRef } from "react";
-import {
-  Animated,
-  FlatList,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import React from "react";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useDispatch } from "react-redux";
 
-import ProgressWheel from "../../../src/components/Progress";
+import { LevelPath } from "../../../src/components/LevelPath";
+import { LevelPlayButton } from "../../../src/components/LevelPlayButton";
+import { useLevels } from "../../../src/hooks/useLevels";
+import { AppDispatch } from "../../../src/store";
+import { updateCurrentLevel } from "../../../src/store/slices/userLevelResultsSlice";
+import { Theme } from "../../../src/styles/theme/theme";
+import { useTheme } from "../../../src/styles/theme/themeProvider";
 
-const levels = [
-  { id: "1", title: "Level 1" },
-  { id: "2", title: "Level 2" },
-  { id: "3", title: "Level 3" },
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
+
+const cookies = [
+  require("../../../assets/images/cookie.png"),
+  require("../../../assets/images/cookie.png"),
+  require("../../../assets/images/cookie-with-book.png"),
+  require("../../../assets/images/cookie.png"),
+  require("../../../assets/images/cookie-with-book.png"),
 ];
-
-const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 
 export default function PlayScreen() {
   const router = useRouter();
-  const scaleAnim = useRef(new Animated.Value(1)).current;
+  const dispatch = useDispatch<AppDispatch>();
+  const theme = useTheme();
+  const cs = styles(theme);
+
+  const { data: levels, loading, error } = useLevels();
+
+  const unlockedLevel = 1;
+
+  if (loading) return <Text style={cs.loadingText}>Loading...</Text>;
+  if (error) return <Text style={cs.loadingText}>Error: {error}</Text>;
 
   const handlePressLevel = (levelId: string) => {
+    dispatch(updateCurrentLevel(levelId));
     router.push(`/level/${levelId}`);
   };
 
-  // const handlePress = (id: string) => {
-  //   Animated.sequence([
-  //     Animated.timing(scaleAnim, {
-  //       toValue: 0.95,
-  //       duration: 100,
-  //       useNativeDriver: true,
-  //     }),
-  //     Animated.timing(scaleAnim, {
-  //       toValue: 1,
-  //       duration: 100,
-  //       useNativeDriver: true,
-  //     }),
-  //   ]).start(() => router.push(`/quiz/${id}`));
-  // };
-
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
-      <ScrollView>
-        <View style={styles.progressContainer}>
-          <ProgressWheel />
-        </View>
+    <SafeAreaView style={cs.container}>
+      <Text style={cs.text}>Get started!</Text>
+      <Text style={cs.subtext}>Start learning and take your cookie!</Text>
 
-        <Text style={styles.headText}>Your daily quizzes</Text>
+      <View style={cs.pathContainer}>
+        {levels.map((level, index) => {
+          const enabled = Number(level.id) <= unlockedLevel;
+          const nextLevel = levels[index + 1];
 
-        {/* {["1", "2"].map((id) => (
-          <Pressable key={id} onPress={() => handlePress(id)}>
-            <Animated.View
-              style={{
-                transform: [{ scale: scaleAnim }],
-                marginHorizontal: 16,
-              }}
-            >
-              <QuizCard
-                id={id}
-                title={id === "1" ? "React Native Basics" : "Native Modules"}
-                description={
-                  id === "1"
-                    ? "Learn components and styles"
-                    : "Location Camera Sound"
-                }
-                image={
-                  id === "1"
-                    ? require("../../../src/images/mascot-one.jpg")
-                    : require("../../../src/images/mascot_puppy.jpg")
-                }
+          const posX = level.position?.x ?? 60 + index * 80;
+          const posY = level.position?.y ?? 200 + Math.sin(index) * 50;
+
+          const cookieImg = cookies[index % cookies.length];
+
+          return (
+            <React.Fragment key={level.id}>
+              {/* Кнопка рівня */}
+              <LevelPlayButton
+                enabled={enabled}
+                onPress={() => handlePressLevel(level.id)}
+                x={posX}
+                y={posY}
               />
-            </Animated.View>
-          </Pressable>
-        ))} */}
-      </ScrollView>
-      <FlatList
-        data={levels}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Pressable
-            onPress={() => handlePressLevel(item.id)}
-            style={{
-              padding: 16,
-              marginBottom: 12,
-              backgroundColor: "#1DB954",
-              borderRadius: 12,
-            }}
-          >
-            <Text style={{ color: "white", fontWeight: "700" }}>
-              {item.title}
-            </Text>
-          </Pressable>
-        )}
-      />
+
+              {/* 🍪 Пряничок + Level текст */}
+              <View
+                style={[
+                  cs.cookieWrapper,
+                  {
+                    left: posX - 60,
+                    top: posY - 20,
+                    zIndex: 2,
+                  },
+                ]}
+              >
+                <Image source={cookieImg} style={cs.cookieImg} />
+                <Text style={cs.levelLabel}>Level {level.id}</Text>
+              </View>
+
+              {/* Лінія між рівнями */}
+              {nextLevel && (
+                <LevelPath
+                  start={{ x: posX, y: posY }}
+                  end={{
+                    x: nextLevel.position?.x ?? 60 + (index + 1) * 80,
+                    y: nextLevel.position?.y ?? 200 + Math.sin(index + 1) * 50,
+                  }}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
+      </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  progressContainer: { padding: 24 },
-  headText: {
-    color: "white",
-    fontSize: 24,
-    fontWeight: "900",
-    textAlign: "center",
-    padding: 24,
-  },
-  quizCardWrapper: {
-    borderRadius: 20,
-    margin: 12,
-    overflow: "hidden",
-  },
-});
+const styles = (theme: Theme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.background,
+    },
+
+    text: {
+      fontSize: 40,
+      color: theme.colors.text,
+      textAlign: "center",
+      marginTop: 40,
+      fontWeight: "900",
+      textTransform: "uppercase",
+    },
+
+    subtext: {
+      fontSize: 16,
+      fontWeight: "400",
+      color: theme.colors.textSecondary,
+      textAlign: "center",
+      marginBottom: 40,
+    },
+
+    pathContainer: {
+      flex: 1,
+      width: SCREEN_WIDTH,
+      height: SCREEN_HEIGHT,
+      position: "absolute",
+      top: 160,
+      left: 76,
+    },
+
+    cookieWrapper: {
+      position: "absolute",
+      alignItems: "center",
+    },
+
+    cookieImg: {
+      width: 56,
+      height: 56,
+    },
+
+    levelLabel: {
+      marginTop: 4,
+      fontSize: 12,
+      fontWeight: "900",
+      color: theme.colors.text,
+    },
+
+    loadingText: {
+      color: theme.colors.text,
+      fontSize: 18,
+      textAlign: "center",
+      marginTop: 50,
+    },
+  });

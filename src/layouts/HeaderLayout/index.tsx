@@ -16,7 +16,7 @@ type Props = {
 const HeaderLayout = forwardRef<ScrollView, Props>(
   ({ title, topElement, isScroll = true, children }, ref) => {
     const theme = useTheme();
-    const styles = createStyles(theme);
+    const cs = createStyles(theme);
 
     return (
       <SafeAreaView
@@ -26,15 +26,15 @@ const HeaderLayout = forwardRef<ScrollView, Props>(
           width: "100%",
         }}
       >
-        <View style={styles.header}>
+        <View style={cs.header}>
           <Image
-            source={require("../../icons/achivement.png")}
-            style={styles.icon}
+            source={require("../../../assets/icons/achivement.png")}
+            style={cs.icon}
           />
-          {title && <Text style={styles.title}>{title}</Text>}
+          {title && <Text style={cs.title}>{title}</Text>}
           <Image
-            source={require("../../icons/notofication.png")}
-            style={styles.icon}
+            source={require("../../../assets/icons/notofication.png")}
+            style={cs.icon}
           />
         </View>
 

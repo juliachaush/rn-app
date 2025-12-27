@@ -22,7 +22,7 @@ export const BigActionCard: React.FC<BigActionCardProps> = ({
 }) => {
   const router = useRouter();
   const theme = useTheme();
-  const styles = createStyles(theme);
+  const cs = createStyles(theme);
 
   const handlePress = () => {
     router.push({
@@ -36,28 +36,26 @@ export const BigActionCard: React.FC<BigActionCardProps> = ({
   return (
     <Pressable
       onPress={handlePress}
-      style={({ pressed }) => [styles.cardContainer, pressed && styles.pressed]}
+      style={({ pressed }) => [cs.cardContainer, pressed && cs.pressed]}
     >
       <LinearGradient
         colors={[theme.colors.accent, theme.colors.darkAccent]}
-        style={styles.gradient}
+        style={cs.gradient}
       >
-        <View
-          style={[styles.iconWrapper, { backgroundColor: `${themeColor}55` }]}
-        >
+        <View style={[cs.iconWrapper, { backgroundColor: `${themeColor}55` }]}>
           <Image
-            source={require("../../images/cookie-with-book.png")}
+            source={require("../../../assets/images/cookie-with-book.png")}
             style={{ width: 80, height: 80, alignSelf: "center" }}
           />
         </View>
 
-        <View style={[styles.dateBadge, { backgroundColor: themeColor }]}>
-          <Text style={styles.dateText}>{date}</Text>
+        <View style={[cs.dateBadge, { backgroundColor: themeColor }]}>
+          <Text style={cs.dateText}>{date}</Text>
         </View>
 
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{subtitle}</Text>
+        <View style={cs.textContainer}>
+          <Text style={cs.title}>{title}</Text>
+          <Text style={cs.subtitle}>{subtitle}</Text>
         </View>
       </LinearGradient>
     </Pressable>

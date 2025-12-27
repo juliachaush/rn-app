@@ -9,10 +9,10 @@ const learningGray = "#b3b3b3";
 const learningWhite = "#ffffff";
 
 /* ===== Secondary colors ===== */
-const warningOrange = "#FF6B35"; // красно-оранжевый
-const alertYellow = "#FFD23F"; // жёлтый
-const infoBlue = "#2D9CDB"; // дополнительный для примера
-const successGreen = "#27AE60"; // дополнительный для примера
+const warningOrange = "#FF6B35";
+const alertYellow = "#FFD23F";
+const infoBlue = "#2D9CDB";
+const successGreen = "#27AE60";
 
 /* ===== Types ===== */
 export type ThemeMode = "light" | "dark";
@@ -44,6 +44,12 @@ export type Theme = {
     alert: string;
     info: string;
     success: string;
+  };
+
+  gradients: {
+    primary: [string, string, string];
+    disabled: [string, string];
+    warning: [string, string, string];
   };
 
   spacing: {
@@ -118,6 +124,12 @@ export const lightTheme: Theme = {
     alert: alertYellow,
     info: infoBlue,
     success: successGreen,
+  },
+
+  gradients: {
+    primary: ["#2FE96A", "#1DB954", "#14833B"],
+    disabled: ["#3A3A3A", "#2C2C2C"],
+    warning: ["#FF6B35", "#e96738ff", "#d9501eff"],
   },
 
   spacing: {

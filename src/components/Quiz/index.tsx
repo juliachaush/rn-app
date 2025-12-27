@@ -17,7 +17,7 @@ type Props = {
 export const QuizCard = ({ id, title, description, image }: Props) => {
   const router = useRouter();
   const theme = useTheme();
-  const styles = createStyles(theme);
+  const cs = createStyles(theme);
 
   const handlePress = () => {
     router.push({
@@ -29,18 +29,18 @@ export const QuizCard = ({ id, title, description, image }: Props) => {
   return (
     <Pressable
       onPress={handlePress}
-      style={({ pressed }) => [styles.cardContainer, pressed && styles.pressed]}
+      style={({ pressed }) => [cs.cardContainer, pressed && cs.pressed]}
     >
       <LinearGradient
         colors={[theme.colors.accent, theme.colors.darkAccent]}
-        style={styles.gradient}
+        style={cs.gradient}
       >
-        <View style={styles.row}>
-          <Image source={image} style={styles.image} resizeMode="contain" />
+        <View style={cs.row}>
+          <Image source={image} style={cs.image} resizeMode="contain" />
 
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+          <View style={cs.textContainer}>
+            <Text style={cs.title}>{title}</Text>
+            <Text style={cs.description}>{description}</Text>
           </View>
         </View>
       </LinearGradient>
