@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Theme } from "../../styles/theme/theme";
+import { Theme } from "../../theme/theme";
 
 const styles = (theme: Theme) =>
   StyleSheet.create({
@@ -51,6 +51,7 @@ const styles = (theme: Theme) =>
     iconColor: {
       color: theme.colors.surface,
     },
+    cardImg: { width: 60, height: 60, alignSelf: "center" },
   });
 
 export default styles;

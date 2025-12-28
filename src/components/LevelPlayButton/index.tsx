@@ -3,8 +3,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
-import { Theme } from "../../styles/theme/theme";
-import { useTheme } from "../../styles/theme/themeProvider";
+import { Theme } from "../../theme/theme";
+import { useTheme } from "../../theme/themeProvider";
 
 type Props = {
   enabled: boolean;
@@ -15,26 +15,26 @@ type Props = {
 
 export function LevelPlayButton({ enabled, onPress, x = 0, y = 0 }: Props) {
   const theme = useTheme();
-  const styles = createStyles(theme, enabled);
+  const cs = createStyles(theme, enabled);
 
   return (
     <Pressable
       disabled={!enabled}
       onPress={onPress}
       style={({ pressed }) => [
-        styles.wrapper,
-        pressed && enabled && styles.pressed,
+        cs.wrapper,
+        pressed && enabled && cs.pressed,
         { left: x, top: y, position: "absolute" },
       ]}
     >
-      <View style={styles.shadowLayer} />
+      <View style={cs.shadowLayer} />
       <LinearGradient
         colors={enabled ? theme.gradients.warning : theme.gradients.disabled}
         start={{ x: 0.2, y: 0 }}
         end={{ x: 0.8, y: 1 }}
-        style={styles.button}
+        style={cs.button}
       >
-        <View style={styles.highlight} />
+        <View style={cs.highlight} />
 
         <Ionicons
           name="play"

@@ -57,9 +57,11 @@ export type LevelData = {
   title: string;
   difficulty: Difficulty;
   gift: QuizReward;
+
   quizzes: {
     id: string;
     title: string;
+    image: string;
     questions: QuestionData[];
   }[];
 };

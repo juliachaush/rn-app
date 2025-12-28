@@ -1,4 +1,3 @@
-// src/store/slices/userLevelResultsSlice.ts
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface LevelResult {
@@ -6,6 +5,7 @@ interface LevelResult {
   level: number;
   score: number;
   date: string;
+  prize: string;
 }
 
 interface UserLevelResultsState {

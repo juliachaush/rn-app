@@ -4,9 +4,10 @@ import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 import { Provider } from "react-redux";
 
-import { store } from "../src/store";
-import { getNavigationTheme } from "../src/styles/theme/navigationTheme";
-import { AppThemeProvider, useTheme } from "../src/styles/theme/themeProvider";
+import { QuizzesProvider } from "../src/context/QuizzesContext";
+import { store } from "../src/store/store";
+import { getNavigationTheme } from "../src/theme/navigationTheme";
+import { AppThemeProvider, useTheme } from "../src/theme/themeProvider";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -30,7 +31,9 @@ export default function RootLayout() {
   return (
     <Provider store={store}>
       <AppThemeProvider>
-        <NavigationLayout />
+        <QuizzesProvider>
+          <NavigationLayout />
+        </QuizzesProvider>
       </AppThemeProvider>
     </Provider>
   );

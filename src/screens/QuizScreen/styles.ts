@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Theme } from "../../styles";
+import { Theme } from "../../theme/theme";
 
 const createStyles = (theme: Theme) =>
   StyleSheet.create({
@@ -19,6 +19,7 @@ const createStyles = (theme: Theme) =>
       fontSize: 20,
       fontWeight: "800",
     },
+    quizImg: { width: 100, height: 100, alignSelf: "center" },
   });
 
 export default createStyles;

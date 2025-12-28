@@ -3,7 +3,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../styles/theme/themeProvider";
+import { useTheme } from "../../theme/themeProvider";
 
 import createStyles from "./styles";
 
@@ -21,6 +21,7 @@ export const BigActionCard: React.FC<BigActionCardProps> = ({
   date,
 }) => {
   const router = useRouter();
+
   const theme = useTheme();
   const cs = createStyles(theme);
 
@@ -45,7 +46,7 @@ export const BigActionCard: React.FC<BigActionCardProps> = ({
         <View style={[cs.iconWrapper, { backgroundColor: `${themeColor}55` }]}>
           <Image
             source={require("../../../assets/images/cookie-with-book.png")}
-            style={{ width: 80, height: 80, alignSelf: "center" }}
+            style={cs.cardImg}
           />
         </View>
 

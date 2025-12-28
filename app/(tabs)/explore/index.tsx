@@ -16,12 +16,10 @@ const CARD_WIDTH = width * 0.6;
 const CARD_HEIGHT = CARD_WIDTH * 1.5;
 
 export default function ExploreScreen() {
+  console.log("learningVideos", learningVideos);
   return (
-    <SafeAreaView
-      edges={["top", "left", "right"]}
-      style={{ flex: 1, backgroundColor: "#121212" }}
-    >
-      <Text style={styles.heading}>Trending Trainings Now</Text>
+    <SafeAreaView edges={["top", "left", "right"]} style={cs.container}>
+      <Text style={cs.heading}>Trending Trainings Now</Text>
 
       <ScrollView
         horizontal
@@ -29,9 +27,13 @@ export default function ExploreScreen() {
         contentContainerStyle={{ paddingHorizontal: 16 }}
       >
         {learningVideos.map((movie: any, index: number) => (
-          <View key={index} style={styles.card}>
-            <Image source={movie.image} style={styles.image} />
-            <Text style={styles.title}>{movie.title}</Text>
+          <View key={index} style={cs.card}>
+            <Image
+              source={require("../../../assets/images/blockchain-technology-cartoon-illustration (1).jpg")}
+              style={cs.image}
+            />
+            <Text style={cs.title}>{movie.title}</Text>
+            <Text style={cs.viewsText}>Views:193400</Text>
           </View>
         ))}
       </ScrollView>
@@ -39,10 +41,11 @@ export default function ExploreScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const cs = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#121212",
+    marginTop: 24,
   },
   heading: {
     color: "#fff",
@@ -65,14 +68,20 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "85%",
+    height: "80%",
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
   },
   title: {
     color: "#fff",
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "700",
     padding: 8,
+  },
+  viewsText: {
+    fontSize: 12,
+    fontWeight: "400",
+    paddingLeft: 8,
+    color: "white",
   },
 });

@@ -1,9 +1,11 @@
-import { useTheme } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
 import { ReactNode } from "react";
 import { Pressable, Text, TextStyle, View } from "react-native";
 
-import { IconSymbol } from "../Icon";
+import { useTheme } from "../../theme/themeProvider";
+
+import createStyles from "./styles";
 
 type Props = {
   title?: string;
@@ -14,21 +16,28 @@ type Props = {
 
 export default function BackButton({
   title,
-  titleStyle,
   rightElement,
   hasBackButton = true,
 }: Props) {
   const navigation = useNavigation();
-  const { colors } = useTheme();
+  const theme = useTheme();
+  const cs = createStyles(theme);
+
+  if (!hasBackButton) {
+    return (
+      <View style={cs.container}>
+        <Text style={cs.text}>{title}</Text>
+        <View>{rightElement}</View>
+      </View>
+    );
+  }
+
   return (
-    <View>
+    <View style={cs.container}>
       <Pressable onPress={navigation.goBack}>
-        <IconSymbol
-          style={{ color: "white" }}
-          name={"chevron.left.forwardslash.chevron.right"}
-        />
+        <Ionicons name={"chevron-back"} size={22} color={"white"} />
       </Pressable>
-      <Text style={{ color: "white" }}>MOMO</Text>
+      <Text style={cs.text}>{title}</Text>
       <View>{rightElement}</View>
     </View>
   );

@@ -1,33 +1,63 @@
 import { useLocalSearchParams } from "expo-router";
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import { useSelector } from "react-redux";
+import React, { useMemo, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
+import { AnswerList } from "../../src/components/AnswerList/AnswerList";
+import { useQuizzesContext } from "../../src/context/QuizzesContext";
 import BackButtonLayout from "../../src/layouts/BackButtonLayout";
-import { QuizPlayScreen } from "../../src/screens";
-import { RootState } from "../../src/store";
-import { Theme } from "../../src/styles/theme/theme";
-import { useTheme } from "../../src/styles/theme/themeProvider";
-
-export interface Question {
-  category?: string;
-  question?: string;
-  answers?: string[];
-  correct?: number;
-}
+import { Theme } from "../../src/theme/theme";
+import { useTheme } from "../../src/theme/themeProvider";
+import { QuestionData } from "../../src/types/quiz";
 
 export default function QuizPlayPage() {
-  const { quizId } = useLocalSearchParams<{ quizId: string }>();
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { quizzes } = useQuizzesContext();
   const theme = useTheme();
   const cs = styles(theme);
-  const { currentLevel } = useSelector(
-    (state: RootState) => state.userLevelResults,
-  );
+
+  const quizQuestions: QuestionData[] = useMemo(() => {
+    if (!quizzes || !id) return [];
+    const quiz = quizzes
+      .flatMap((lvl) => lvl.quizzes)
+      .flat()
+      .find((q) => q.id === id);
+    return quiz?.questions ?? [];
+  }, [quizzes, id]);
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentQuestionIndex((prev) =>
+      prev + 1 < quizQuestions.length ? prev + 1 : prev,
+    );
+  };
+
+  if (!quizQuestions.length) {
+    return (
+      <BackButtonLayout title={`Quiz ${id}`}>
+        <View style={cs.container}>
+          <Text>No questions found</Text>
+        </View>
+      </BackButtonLayout>
+    );
+  }
+
+  const currentQuestion = quizQuestions[currentQuestionIndex];
 
   return (
-    <BackButtonLayout>
+    <BackButtonLayout title={`Quiz ${id}`}>
       <View style={cs.container}>
-        <QuizPlayScreen />
+        <Text
+          style={{
+            color: theme.colors.text,
+            fontSize: 18,
+            fontWeight: "900",
+            marginBottom: 24,
+          }}
+        >
+          {currentQuestion.question}
+        </Text>
+        <AnswerList question={currentQuestion} onNext={handleNext} />
       </View>
     </BackButtonLayout>
   );
@@ -37,11 +67,6 @@ const styles = (theme: Theme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-    },
-    loadingText: {
-      color: theme.colors.background,
-      fontSize: 18,
-      textAlign: "center",
-      marginTop: 50,
+      padding: 16,
     },
   });

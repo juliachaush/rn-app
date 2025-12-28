@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import quizReducer from "./slices/quizSlice";
-import userLevelResultsReducer from "./slices/userLevelResultsSlice";
+import quizReducer from "./slices/quiz.slice";
+import userLevelResultsReducer from "./slices/userLevelResults.slice";
 
 export const store = configureStore({
   reducer: {

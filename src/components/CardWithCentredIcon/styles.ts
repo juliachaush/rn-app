@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Theme } from "../../styles/theme/theme";
+import { Theme } from "../../theme/theme";
 
 const createStyles = (theme: Theme) =>
   StyleSheet.create({
@@ -65,6 +65,7 @@ const createStyles = (theme: Theme) =>
       lineHeight: 20,
       paddingHorizontal: 10,
     },
+    cardImg: { width: 80, height: 80, alignSelf: "center" },
   });
 
 export default createStyles;

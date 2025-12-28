@@ -14,6 +14,8 @@ This project is designed for learning and testing JavaScript, React, and React N
 - ✅ Clean project structure using **Expo Router**
 - ✅ ESLint + Prettier for consistent code style
 
+- Dark and Light theme (in progress)
+
 ---
 
 ## Getting Started

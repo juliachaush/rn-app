@@ -3,13 +3,13 @@ import { Image } from "expo-image";
 import React from "react";
 import { Text, View } from "react-native";
 
-import { useTheme } from "../../styles";
+import { useTheme } from "../../theme/themeProvider";
 
 import createStyles from "./styles";
 
 export function QuizPlayScreen() {
   const route = useRoute<any>();
-  const { quizId } = route.params;
+  const { id } = route.params;
 
   const theme = useTheme();
   const cs = createStyles(theme);
@@ -18,10 +18,10 @@ export function QuizPlayScreen() {
     <View style={cs.container}>
       <Image
         source={require("../../../assets/images/cookie.png")}
-        style={{ width: 100, height: 100, alignSelf: "center" }}
+        style={cs.quizImg}
       />
-      <Text style={cs.category}>Quiz id: {quizId}</Text>
-      <Text style={cs.question}>Вопрос будет здесь…</Text>
+      <Text style={cs.category}>Quiz id: {id}</Text>
+      <Text style={cs.question}>Question would be here...</Text>
     </View>
   );
 }

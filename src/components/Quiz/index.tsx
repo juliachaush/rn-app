@@ -3,7 +3,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../styles";
+import { useTheme } from "../../theme/themeProvider";
 
 import createStyles from "./styles";
 
@@ -11,13 +11,22 @@ type Props = {
   id: string;
   title: string;
   description: string;
-  image: any;
+  imageKey?: any;
 };
 
-export const QuizCard = ({ id, title, description, image }: Props) => {
+export const levelImages: Record<string, any> = {
+  "1": require("../../../assets/images/mascot_puppy.jpg"),
+  "2": require("../../../assets/images/mascot-one.jpg"),
+  "3": require("../../../assets/images/mascot_puppy.jpg"),
+  "4": require("../../../assets/images/mascot-one.jpg"),
+  "5": require("../../../assets/images/mascot_puppy.jpg"),
+};
+
+export const QuizCard = ({ id, title, description, imageKey }: Props) => {
   const router = useRouter();
   const theme = useTheme();
   const cs = createStyles(theme);
+  const imageSource = (imageKey && levelImages[imageKey]) || levelImages[id];
 
   const handlePress = () => {
     router.push({
@@ -36,7 +45,7 @@ export const QuizCard = ({ id, title, description, image }: Props) => {
         style={cs.gradient}
       >
         <View style={cs.row}>
-          <Image source={image} style={cs.image} resizeMode="contain" />
+          <Image source={imageSource} style={cs.image} resizeMode="contain" />
 
           <View style={cs.textContainer}>
             <Text style={cs.title}>{title}</Text>

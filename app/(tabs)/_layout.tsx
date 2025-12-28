@@ -3,7 +3,7 @@ import React from "react";
 import { Image } from "react-native";
 
 import { HapticTab } from "../../src/components/Tab";
-import { useTheme } from "../../src/styles/theme/themeProvider";
+import { useTheme } from "../../src/theme/themeProvider";
 
 export default function TabLayout() {
   const theme = useTheme();

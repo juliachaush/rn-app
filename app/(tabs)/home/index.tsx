@@ -7,7 +7,7 @@ import { HomeScreen } from "../../../src/screens";
 
 export default function HomeTabScreen() {
   return (
-    <View style={styles.container}>
+    <View style={cs.container}>
       <StatusBar style="light" />
       <HeaderLayout>
         <HomeScreen />
@@ -16,7 +16,7 @@ export default function HomeTabScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const cs = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",

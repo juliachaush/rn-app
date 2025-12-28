@@ -14,6 +14,7 @@
         {
           "id": "1",
           "title": "React Native Basics 1",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -60,6 +61,7 @@
         {
           "id": "2",
           "title": "React Native Basics 2",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -101,6 +103,7 @@
         {
           "id": "3",
           "title": "React Native Basics 3",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -142,6 +145,7 @@
         {
           "id": "4",
           "title": "React Native Basics 4",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -193,6 +197,7 @@
         {
           "id": "5",
           "title": "React Native Basics 5",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -253,6 +258,7 @@
         {
           "id": "1",
           "title": "Layouts & Styling 1",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -289,6 +295,7 @@
         {
           "id": "2",
           "title": "Layouts & Styling 2",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -335,6 +342,7 @@
         {
           "id": "3",
           "title": "Layouts & Styling 3",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -376,6 +384,7 @@
         {
           "id": "4",
           "title": "Layouts & Styling 4",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -432,6 +441,7 @@
         {
           "id": "5",
           "title": "Layouts & Styling 5",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -497,6 +507,7 @@
         {
           "id": "1",
           "title": "Navigation 1",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -548,6 +559,7 @@
         {
           "id": "2",
           "title": "Navigation 2",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -594,6 +606,7 @@
         {
           "id": "3",
           "title": "Navigation 3",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -640,6 +653,7 @@
         {
           "id": "4",
           "title": "Navigation 4",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -696,6 +710,7 @@
         {
           "id": "5",
           "title": "Navigation 5",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -756,6 +771,7 @@
         {
           "id": "1",
           "title": "Performance 1",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -797,6 +813,7 @@
         {
           "id": "2",
           "title": "Performance 2",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -838,6 +855,7 @@
         {
           "id": "3",
           "title": "Performance 3",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -884,6 +902,7 @@
         {
           "id": "4",
           "title": "Performance 4",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -945,6 +964,7 @@
         {
           "id": "5",
           "title": "Performance 5",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -1010,6 +1030,7 @@
         {
           "id": "1",
           "title": "Advanced & API 1",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -1051,6 +1072,7 @@
         {
           "id": "2",
           "title": "Advanced & API 2",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -1107,6 +1129,7 @@
         {
           "id": "3",
           "title": "Advanced & API 3",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -1168,6 +1191,7 @@
         {
           "id": "4",
           "title": "Advanced & API 4",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",
@@ -1219,6 +1243,7 @@
         {
           "id": "5",
           "title": "Advanced & API 5",
+          "image": "../../assets/images/mascot_puppy.jpg",
           "questions": [
             {
               "id": "q1",

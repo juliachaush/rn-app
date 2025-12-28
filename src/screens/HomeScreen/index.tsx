@@ -1,8 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 
-import { BigActionCard, MenuCard } from "../../components/index";
-import { useTheme } from "../../styles";
+import { BigActionCard } from "../../components/CardWithCentredIcon";
+import { MenuCard } from "../../components/CardWithRightArrow";
+import { useTheme } from "../../theme/themeProvider";
+import { getDate } from "../../utils/getDate";
 
 import createStyles from "./styles";
 
@@ -10,11 +12,9 @@ export function HomeScreen() {
   const theme = useTheme();
   const cs = createStyles(theme);
 
-  const date = new Date();
-  const longDate = new Intl.DateTimeFormat("en-GB", {
-    dateStyle: "full",
-  }).format(date);
+  const longDate = getDate();
 
+  // screen in progress
   return (
     <View style={cs.container}>
       {["1"].map((id) => (
@@ -26,15 +26,14 @@ export function HomeScreen() {
             cardColor={theme.colors.warning}
             isImage={true}
           />
-
-          <BigActionCard
-            id={"1"}
-            date={longDate}
-            title="Attempt the call"
-            subtitle="Have fun with colleagues to learn React Native"
-          />
         </View>
       ))}
+      <BigActionCard
+        id={"1"}
+        date={longDate}
+        title="Attempt the call"
+        subtitle="Have fun with colleagues to learn React Native"
+      />
     </View>
   );
 }

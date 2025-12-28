@@ -4,7 +4,7 @@ export type Question = {
   id: string;
   question: string;
   options: string[];
-  correctAnswer: number; // індекс правильної відповіді
+  correctAnswer: number;
   explanation?: string;
 };
 
@@ -28,10 +28,9 @@ export type QuizResult = {
   levelId: number;
   correctAnswers: number;
   totalQuestions: number;
-  completedAt: string; // ISO string
+  completedAt: string;
 };
 
-// Тип для зовнішніх JSON даних (як у тебе зараз)
 export type QuestionData = {
   id: string;
   question: string;
@@ -45,9 +44,11 @@ export type LevelData = {
   title: string;
   difficulty: Difficulty;
   gift: QuizReward;
+
   quizzes: {
     id: string;
     title: string;
+    image: string;
     questions: QuestionData[];
   }[];
 };
@@ -56,7 +57,6 @@ export type QuizzesData = {
   quizzes: LevelData[];
 };
 
-// Для відображення рівнів на карті
 export type LevelPosition = {
   x: number;
   y: number;

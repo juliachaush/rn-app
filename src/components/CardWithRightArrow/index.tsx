@@ -3,8 +3,8 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../styles/theme/themeProvider";
-import { IconSymbol } from "../index";
+import { useTheme } from "../../theme/themeProvider";
+import { IconSymbol } from "../Icon";
 
 import createStyles from "./styles";
 
@@ -26,6 +26,7 @@ export const MenuCard = ({
   isImage,
 }: MenuCardProps) => {
   const router = useRouter();
+
   const theme = useTheme();
   const cs = createStyles(theme);
 
@@ -48,7 +49,7 @@ export const MenuCard = ({
         {isImage && (
           <Image
             source={require("../../../assets/icons/star.png")}
-            style={{ width: 60, height: 60, alignSelf: "center" }}
+            style={cs.cardImg}
           />
         )}
         {iconName && (

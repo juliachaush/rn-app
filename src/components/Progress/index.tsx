@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { Animated, ImageBackground, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
-import styles from "./styles";
+import { useTheme } from "../../theme/themeProvider";
+
+import createStyles from "./styles";
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -15,6 +17,8 @@ export default function ProgressWheel({
   progress = 70,
   backgroundImage,
 }: ProgressWheelProps) {
+  const theme = useTheme();
+  const cs = createStyles(theme);
   const size = 120;
   const strokeWidth = 16;
   const radius = (size - strokeWidth) / 2;
@@ -28,30 +32,31 @@ export default function ProgressWheel({
       duration: 1200,
       useNativeDriver: false,
     }).start();
-  }, [progress]);
+  }, [progress, animatedValue]);
 
   const strokeDashoffset = animatedValue.interpolate({
     inputRange: [0, 100],
     outputRange: [circumference, 0],
   });
 
-  const animatedText: Animated.AnimatedInterpolation<string | number> =
-    animatedValue.interpolate({
-      inputRange: [0, 100],
-      outputRange: ["0", "100"],
-    });
+  // const animatedText: Animated.AnimatedInterpolation<string | number> =
+  //   animatedValue.interpolate({
+  //     inputRange: [0, 100],
+  //     outputRange: ["0", "100"],
+  //   });
 
+  // component in progress
   return (
     <ImageBackground
       source={
         backgroundImage || require("../../../assets/images/background.jpg")
       }
-      style={styles.container}
+      style={cs.container}
       imageStyle={{ borderRadius: 24 }}
     >
       <Svg width={size} height={size}>
         <Circle
-          stroke="#eee"
+          stroke={theme.colors.text}
           fill="none"
           cx={size / 2}
           cy={size / 2}
@@ -60,7 +65,7 @@ export default function ProgressWheel({
         />
 
         <AnimatedCircle
-          stroke="#0b622aff"
+          stroke={theme.colors.accent}
           fill="none"
           cx={size / 2}
           cy={size / 2}
@@ -72,8 +77,8 @@ export default function ProgressWheel({
         />
       </Svg>
 
-      <View style={styles.textWrapper}>
-        <Animated.Text style={styles.text}>Hello%</Animated.Text>
+      <View style={cs.textWrapper}>
+        <Animated.Text style={cs.text}>Hello%</Animated.Text>
       </View>
     </ImageBackground>
   );

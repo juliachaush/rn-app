@@ -7,10 +7,10 @@ import { useDispatch } from "react-redux";
 import { LevelPath } from "../../../src/components/LevelPath";
 import { LevelPlayButton } from "../../../src/components/LevelPlayButton";
 import { useLevels } from "../../../src/hooks/useLevels";
-import { AppDispatch } from "../../../src/store";
-import { updateCurrentLevel } from "../../../src/store/slices/userLevelResultsSlice";
-import { Theme } from "../../../src/styles/theme/theme";
-import { useTheme } from "../../../src/styles/theme/themeProvider";
+import { updateCurrentLevel } from "../../../src/store/slices/userLevelResults.slice";
+import { AppDispatch } from "../../../src/store/store";
+import { Theme } from "../../../src/theme/theme";
+import { useTheme } from "../../../src/theme/themeProvider";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -57,7 +57,6 @@ export default function PlayScreen() {
 
           return (
             <React.Fragment key={level.id}>
-              {/* Кнопка рівня */}
               <LevelPlayButton
                 enabled={enabled}
                 onPress={() => handlePressLevel(level.id)}
@@ -65,7 +64,6 @@ export default function PlayScreen() {
                 y={posY}
               />
 
-              {/* 🍪 Пряничок + Level текст */}
               <View
                 style={[
                   cs.cookieWrapper,
@@ -80,7 +78,6 @@ export default function PlayScreen() {
                 <Text style={cs.levelLabel}>Level {level.id}</Text>
               </View>
 
-              {/* Лінія між рівнями */}
               {nextLevel && (
                 <LevelPath
                   start={{ x: posX, y: posY }}

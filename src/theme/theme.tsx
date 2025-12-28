@@ -71,6 +71,8 @@ export type Theme = {
     rounded: string;
     mono: string;
   };
+
+  fontSizes: { xs: number; sm: number; md: number; lg: number };
 };
 
 /* ===== Fonts ===== */
@@ -146,6 +148,13 @@ export const lightTheme: Theme = {
   },
 
   fonts,
+
+  fontSizes: {
+    xs: 12,
+    sm: 16,
+    md: 24,
+    lg: 32,
+  },
 };
 
 /* ===== Dark theme ===== */

@@ -3,7 +3,7 @@ import { type PropsWithChildren, ReactNode, forwardRef } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { useTheme } from "../../styles/theme/themeProvider";
+import { useTheme } from "../../theme/themeProvider";
 
 import createStyles from "./styles";
 
