@@ -3,22 +3,22 @@ import { useNavigation } from "expo-router";
 import { ReactNode } from "react";
 import { Pressable, Text, TextStyle, View } from "react-native";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
 
 import createStyles from "./styles";
 
-type Props = {
+type BackNavHeaderProps = {
   title?: string;
   titleStyle?: TextStyle;
   rightElement?: ReactNode;
   hasBackButton?: boolean;
 };
 
-export default function BackButton({
+export default function BackNavHeader({
   title,
   rightElement,
   hasBackButton = true,
-}: Props) {
+}: BackNavHeaderProps) {
   const navigation = useNavigation();
   const theme = useTheme();
   const cs = createStyles(theme);
@@ -43,4 +43,4 @@ export default function BackButton({
   );
 }
 
-BackButton.displayName = "BackButton";
+BackNavHeader.displayName = "BackNavHeader";

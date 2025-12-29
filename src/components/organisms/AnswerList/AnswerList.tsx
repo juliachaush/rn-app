@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
-import { QuestionData } from "../../types/quiz";
-import { Answer } from "../AnswerOption/AnswerOption";
+import { QuestionData } from "../../../types/quiz";
+import { Answer } from "../../molecules/AnswerOption/AnswerOption";
 
 type AnswerListProps = {
   question: QuestionData;

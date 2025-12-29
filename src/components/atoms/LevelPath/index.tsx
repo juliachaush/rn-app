@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
 
 import createStyles from "./styles";
 
@@ -11,7 +11,7 @@ type Point = {
   y: number;
 };
 
-type Props = {
+type LevelPathProps = {
   start: Point;
   end: Point;
   color?: string;
@@ -25,7 +25,7 @@ export function LevelPath({
   color,
   width = 4,
   dashArray = [8, 4],
-}: Props) {
+}: LevelPathProps) {
   const theme = useTheme();
   const cs = createStyles(theme);
   const controlPoint = {

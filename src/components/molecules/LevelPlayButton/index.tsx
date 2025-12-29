@@ -3,17 +3,22 @@ import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
-import { Theme } from "../../theme/theme";
-import { useTheme } from "../../theme/themeProvider";
+import { Theme } from "../../../theme/theme";
+import { useTheme } from "../../../theme/themeProvider";
 
-type Props = {
+type LevelPlayButtonProps = {
   enabled: boolean;
   onPress: () => void;
   x?: number;
   y?: number;
 };
 
-export function LevelPlayButton({ enabled, onPress, x = 0, y = 0 }: Props) {
+export function LevelPlayButton({
+  enabled,
+  onPress,
+  x = 0,
+  y = 0,
+}: LevelPlayButtonProps) {
   const theme = useTheme();
   const cs = createStyles(theme, enabled);
 

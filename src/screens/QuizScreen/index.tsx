@@ -1,8 +1,8 @@
 import { useRoute } from "@react-navigation/native";
-import { Image } from "expo-image";
 import React from "react";
 import { Text, View } from "react-native";
 
+import { Image } from "../../components/atoms/Image/Image";
 import { useTheme } from "../../theme/themeProvider";
 
 import createStyles from "./styles";
@@ -19,6 +19,8 @@ export function QuizPlayScreen() {
       <Image
         source={require("../../../assets/images/cookie.png")}
         style={cs.quizImg}
+        width={100}
+        height={100}
       />
       <Text style={cs.category}>Quiz id: {id}</Text>
       <Text style={cs.question}>Question would be here...</Text>

@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router";
 import React, { useMemo, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { AnswerList } from "../../src/components/AnswerList/AnswerList";
+import { AnswerList } from "../../src/components/organisms/AnswerList/AnswerList";
 import { useQuizzesContext } from "../../src/context/QuizzesContext";
 import BackButtonLayout from "../../src/layouts/BackButtonLayout";
 import { Theme } from "../../src/theme/theme";
@@ -12,6 +12,7 @@ import { QuestionData } from "../../src/types/quiz";
 export default function QuizPlayPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { quizzes } = useQuizzesContext();
+
   const theme = useTheme();
   const cs = styles(theme);
 
@@ -47,16 +48,7 @@ export default function QuizPlayPage() {
   return (
     <BackButtonLayout title={`Quiz ${id}`}>
       <View style={cs.container}>
-        <Text
-          style={{
-            color: theme.colors.text,
-            fontSize: 18,
-            fontWeight: "900",
-            marginBottom: 24,
-          }}
-        >
-          {currentQuestion.question}
-        </Text>
+        <Text style={cs.text}>{currentQuestion.question}</Text>
         <AnswerList question={currentQuestion} onNext={handleNext} />
       </View>
     </BackButtonLayout>
@@ -68,5 +60,11 @@ const styles = (theme: Theme) =>
     container: {
       flex: 1,
       padding: 16,
+    },
+    text: {
+      color: theme.colors.text,
+      fontSize: 18,
+      fontWeight: "900",
+      marginBottom: 24,
     },
   });

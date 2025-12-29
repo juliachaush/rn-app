@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
-import { BigActionCard } from "../../components/CardWithCentredIcon";
-import { MenuCard } from "../../components/CardWithRightArrow";
+import { CenteredIconCard } from "../../components/molecules/CenteredIconCard";
+import { NavigationCard } from "../../components/molecules/NavigationCard";
 import { useTheme } from "../../theme/themeProvider";
 import { getDate } from "../../utils/getDate";
 
@@ -19,7 +19,7 @@ export function HomeScreen() {
     <View style={cs.container}>
       {["1"].map((id) => (
         <View key={id}>
-          <MenuCard
+          <NavigationCard
             id={id}
             title="Check your quiz for today"
             subtitle="Update your knowledge"
@@ -28,7 +28,7 @@ export function HomeScreen() {
           />
         </View>
       ))}
-      <BigActionCard
+      <CenteredIconCard
         id={"1"}
         date={longDate}
         title="Attempt the call"

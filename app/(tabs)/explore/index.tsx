@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import learningVideos from "../../../src/utils/learningVideos.json";
+import learningVideos from "../../../src/data/learningVideos.json";
 
 const { width } = Dimensions.get("window");
 const CARD_WIDTH = width * 0.6;

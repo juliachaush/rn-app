@@ -3,11 +3,11 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
 
 import createStyles from "./styles";
 
-type Props = {
+type QuizCardProps = {
   id: string;
   title: string;
   description: string;
@@ -15,14 +15,19 @@ type Props = {
 };
 
 export const levelImages: Record<string, any> = {
-  "1": require("../../../assets/images/mascot_puppy.jpg"),
-  "2": require("../../../assets/images/mascot-one.jpg"),
-  "3": require("../../../assets/images/mascot_puppy.jpg"),
-  "4": require("../../../assets/images/mascot-one.jpg"),
-  "5": require("../../../assets/images/mascot_puppy.jpg"),
+  "1": require("../../../../assets/images/mascot_puppy.jpg"),
+  "2": require("../../../../assets/images/mascot-one.jpg"),
+  "3": require("../../../../assets/images/mascot_puppy.jpg"),
+  "4": require("../../../../assets/images/mascot-one.jpg"),
+  "5": require("../../../../assets/images/mascot_puppy.jpg"),
 };
 
-export const QuizCard = ({ id, title, description, imageKey }: Props) => {
+export const QuizCard = ({
+  id,
+  title,
+  description,
+  imageKey,
+}: QuizCardProps) => {
   const router = useRouter();
   const theme = useTheme();
   const cs = createStyles(theme);

@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { FlatList, StyleSheet, Text } from "react-native";
 
-import { AnimatedQuizCard } from "../../src/components/AnimatedQuizCard/AnimatedQuizCard";
+import { AnimatedQuizCard } from "../../src/components/molecules/AnimatedQuizCard/AnimatedQuizCard";
 import { useLevelQuizzes } from "../../src/hooks/useLevelQuizzes";
 import BackButtonLayout from "../../src/layouts/BackButtonLayout";
 import { Theme } from "../../src/theme/theme";

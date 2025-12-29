@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
 
 type AnswerProps = {
   text: string;

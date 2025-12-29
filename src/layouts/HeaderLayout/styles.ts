@@ -1,10 +1,10 @@
-// styles.ts
 import { StyleSheet } from "react-native";
 
 import { Theme } from "../../theme/theme";
 
 const createStyles = (theme: Theme) =>
   StyleSheet.create({
+    container: { flex: 1, width: "100%" },
     header: {
       flexDirection: "row",
       alignItems: "flex-end",

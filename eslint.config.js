@@ -1,27 +1,27 @@
 const { defineConfig } = require("eslint/config");
 const expoConfig = require("eslint-config-expo/flat");
+const simpleImportSort = require("eslint-plugin-simple-import-sort");
 
 module.exports = defineConfig([
   expoConfig,
   {
     ignores: ["dist/*"],
+
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
+
     rules: {
-      "import/order": [
+      "simple-import-sort/imports": [
         "error",
         {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-          ],
+          groups: [["^@?\\w"], ["^@"], ["^\\.."]],
           "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true },
         },
       ],
-      "sort-imports": ["error", { ignoreDeclarationSort: true }],
+      "simple-import-sort/exports": "error",
+      "import/order": "off",
+      "sort-imports": "off",
       "no-unused-vars": "warn",
     },
   },

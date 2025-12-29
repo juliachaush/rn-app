@@ -1,14 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../theme/themeProvider";
-import { IconSymbol } from "../Icon";
+import { useTheme } from "../../../theme/themeProvider";
+import { IconSymbol } from "../../atoms/Icon";
+import { Image } from "../../atoms/Image/Image";
 
 import createStyles from "./styles";
 
-type MenuCardProps = {
+type NavigationCardProps = {
   title: string;
   id: number | string;
   subtitle?: string;
@@ -17,14 +18,14 @@ type MenuCardProps = {
   isImage: boolean;
 };
 
-export const MenuCard = ({
+export const NavigationCard = ({
   title,
   id,
   subtitle,
   iconName,
   cardColor,
   isImage,
-}: MenuCardProps) => {
+}: NavigationCardProps) => {
   const router = useRouter();
 
   const theme = useTheme();
@@ -48,8 +49,10 @@ export const MenuCard = ({
       <View style={cs.leftContent}>
         {isImage && (
           <Image
-            source={require("../../../assets/icons/star.png")}
+            source={require("../../../../assets/icons/star.png")}
             style={cs.cardImg}
+            width={60}
+            height={60}
           />
         )}
         {iconName && (

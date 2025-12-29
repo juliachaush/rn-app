@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from "react";
 import { Animated, ImageBackground, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
 
 import createStyles from "./styles";
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
-interface ProgressWheelProps {
+type ProgressWheelProps = {
   progress?: number;
   backgroundImage?: any;
-}
+};
 
 export default function ProgressWheel({
   progress = 70,

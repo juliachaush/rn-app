@@ -1,38 +1,35 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
-import { useTheme } from "../../theme/themeProvider";
+import { useTheme } from "../../../theme/themeProvider";
+import { Image } from "../../atoms/Image/Image";
 
 import createStyles from "./styles";
 
-interface BigActionCardProps {
+type CenteredIconCardProps = {
   id: string;
   title: string;
   subtitle: string;
   date: string;
-}
+};
 
-export const BigActionCard: React.FC<BigActionCardProps> = ({
+export const CenteredIconCard = ({
   id,
   title,
   subtitle,
   date,
-}) => {
+}: CenteredIconCardProps) => {
   const router = useRouter();
 
   const theme = useTheme();
   const cs = createStyles(theme);
+  const themeColor = theme.colors.alert;
 
   const handlePress = () => {
-    router.push({
-      pathname: "/quiz/[id]",
-      params: { id },
-    });
+    router.push(`/quiz/${id}`);
   };
-
-  const themeColor = theme.colors.alert;
 
   return (
     <Pressable
@@ -45,8 +42,10 @@ export const BigActionCard: React.FC<BigActionCardProps> = ({
       >
         <View style={[cs.iconWrapper, { backgroundColor: `${themeColor}55` }]}>
           <Image
-            source={require("../../../assets/images/cookie-with-book.png")}
+            source={require("../../../../assets/images/cookie-with-book.png")}
             style={cs.cardImg}
+            width={80}
+            height={80}
           />
         </View>
 

@@ -1,11 +1,12 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch } from "react-redux";
 
-import { LevelPath } from "../../../src/components/LevelPath";
-import { LevelPlayButton } from "../../../src/components/LevelPlayButton";
+import { Image } from "../../../src/components/atoms/Image/Image";
+import { LevelPath } from "../../../src/components/atoms/LevelPath";
+import { LevelPlayButton } from "../../../src/components/molecules/LevelPlayButton";
 import { useLevels } from "../../../src/hooks/useLevels";
 import { updateCurrentLevel } from "../../../src/store/slices/userLevelResults.slice";
 import { AppDispatch } from "../../../src/store/store";
@@ -74,7 +75,12 @@ export default function PlayScreen() {
                   },
                 ]}
               >
-                <Image source={cookieImg} style={cs.cookieImg} />
+                <Image
+                  source={cookieImg}
+                  style={cs.cookieImg}
+                  width={56}
+                  height={56}
+                />
                 <Text style={cs.levelLabel}>Level {level.id}</Text>
               </View>
 
