@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import { HOME_PAGE } from "../src/consts/routes";
 import { Theme } from "../src/theme/theme";
 import { useTheme } from "../src/theme/themeProvider";
 
@@ -24,7 +25,7 @@ export default function GlobalError({
       <TouchableOpacity onPress={reset} style={cs.button}>
         <Text style={cs.secondaryButtonText}>Try again</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.replace("/")}>
+      <TouchableOpacity onPress={() => router.replace(HOME_PAGE)}>
         <Text style={cs.primaryButtonText}>Home screen</Text>
       </TouchableOpacity>
     </View>

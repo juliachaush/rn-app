@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import quizReducer from "./slices/quiz.slice";
-import userLevelResultsReducer from "./slices/userLevelResults.slice";
+import quizProgressSlice from "./slices/quizProgress.slice";
 
 export const store = configureStore({
   reducer: {
-    quiz: quizReducer,
-    userLevelResults: userLevelResultsReducer,
+    quizProgress: quizProgressSlice,
   },
 });
 

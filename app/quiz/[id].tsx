@@ -1,55 +1,62 @@
-import { useLocalSearchParams } from "expo-router";
-import React, { useMemo, useState } from "react";
+import { useLocalSearchParams, useNavigation } from "expo-router";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
 
 import { AnswerList } from "../../src/components/organisms/AnswerList/AnswerList";
-import { useQuizzesContext } from "../../src/context/QuizzesContext";
+import { useQuizzesContext } from "../../src/context/QuizzesContext/useQuizzesContext";
+import { useQuizPlay } from "../../src/hooks/useQuizPlay";
 import BackButtonLayout from "../../src/layouts/BackButtonLayout";
+import { completeQuiz } from "../../src/store/slices/quizProgress.slice";
+import { AppDispatch } from "../../src/store/store";
 import { Theme } from "../../src/theme/theme";
 import { useTheme } from "../../src/theme/themeProvider";
-import { QuestionData } from "../../src/types/quiz";
 
 export default function QuizPlayPage() {
+  const navigation = useNavigation();
+  const dispatch = useDispatch<AppDispatch>();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { quizzes } = useQuizzesContext();
+  const { currentQuizzes, currentLoading, currentError, loadLevel } =
+    useQuizzesContext();
 
   const theme = useTheme();
   const cs = styles(theme);
 
-  const quizQuestions: QuestionData[] = useMemo(() => {
-    if (!quizzes || !id) return [];
-    const quiz = quizzes
-      .flatMap((lvl) => lvl.quizzes)
-      .flat()
-      .find((q) => q.id === id);
-    return quiz?.questions ?? [];
-  }, [quizzes, id]);
+  const {
+    currentQuestion,
+    currentIndex,
+    totalQuestions,
+    isLastQuestion,
+    goToNext,
+  } = useQuizPlay({ quizzes: currentQuizzes[0].quizzes, quizId: id });
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  useEffect(() => {
+    if (isLastQuestion && currentQuestion) {
+      dispatch(completeQuiz(id));
+      navigation.goBack();
+    }
+  }, [isLastQuestion, currentQuestion]);
 
-  const handleNext = () => {
-    setCurrentQuestionIndex((prev) =>
-      prev + 1 < quizQuestions.length ? prev + 1 : prev,
-    );
-  };
-
-  if (!quizQuestions.length) {
+  if (!currentQuestion) {
     return (
       <BackButtonLayout title={`Quiz ${id}`}>
-        <View style={cs.container}>
-          <Text>No questions found</Text>
+        <View style={cs.center}>
+          <Text style={cs.emptyText}>There is no questions in this quiz</Text>
         </View>
       </BackButtonLayout>
     );
   }
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
-
   return (
     <BackButtonLayout title={`Quiz ${id}`}>
       <View style={cs.container}>
-        <Text style={cs.text}>{currentQuestion.question}</Text>
-        <AnswerList question={currentQuestion} onNext={handleNext} />
+        <Text style={cs.progress}>
+          Question {currentIndex + 1} / {totalQuestions}
+        </Text>
+
+        <Text style={cs.question}>{currentQuestion.question}</Text>
+
+        <AnswerList question={currentQuestion} onNext={goToNext} />
       </View>
     </BackButtonLayout>
   );
@@ -61,10 +68,38 @@ const styles = (theme: Theme) =>
       flex: 1,
       padding: 16,
     },
-    text: {
+    center: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 20,
+    },
+    progress: {
+      fontSize: 16,
+      color: theme.colors.textSecondary,
+      marginBottom: 16,
+      textAlign: "center",
+    },
+    question: {
+      fontSize: 20,
+      fontWeight: "700",
       color: theme.colors.text,
+      marginBottom: 32,
+      lineHeight: 28,
+    },
+    loadingText: {
+      marginTop: 16,
+      fontSize: 16,
+      color: theme.colors.text,
+    },
+    errorText: {
+      fontSize: 16,
+      color: theme.colors.warning,
+      textAlign: "center",
+    },
+    emptyText: {
       fontSize: 18,
-      fontWeight: "900",
-      marginBottom: 24,
+      color: theme.colors.text,
+      textAlign: "center",
     },
   });

@@ -9,6 +9,8 @@ type State = {
   error: string | null;
 };
 
+const LEVEL_PATH = "/levels";
+
 export function useLevels() {
   const [state, setState] = useState<State>({
     data: [],
@@ -23,7 +25,7 @@ export function useLevels() {
       setState((s) => ({ ...s, loading: true, error: null }));
 
       try {
-        const data = await apiFetch<LevelPreview[]>("/levels");
+        const data = await apiFetch<LevelPreview[]>(LEVEL_PATH);
 
         if (active) {
           setState({

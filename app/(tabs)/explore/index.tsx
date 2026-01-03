@@ -16,7 +16,7 @@ const CARD_WIDTH = width * 0.6;
 const CARD_HEIGHT = CARD_WIDTH * 1.5;
 
 export default function ExploreScreen() {
-  console.log("learningVideos", learningVideos);
+  // screen in progress
   return (
     <SafeAreaView edges={["top", "left", "right"]} style={cs.container}>
       <Text style={cs.heading}>Trending Trainings Now</Text>

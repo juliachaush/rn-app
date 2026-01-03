@@ -20,7 +20,6 @@ export const Image = ({ source, width, height, style, ...rest }: Props) => {
       style={[{ width, height }, style]}
       contentFit="cover"
       transition={300}
-      placeholder={{ blurhash: "#f9f9f9" }}
       {...rest}
     />
   );

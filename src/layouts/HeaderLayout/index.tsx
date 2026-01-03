@@ -22,14 +22,14 @@ const HeaderLayout = forwardRef<ScrollView, HeaderLayoutProps>(
       <SafeAreaView style={cs.container}>
         <View style={cs.header}>
           <Image
-            source={require("../../../assets/icons/achivement.png")}
+            source={require("../../../assets/icons/achievement.png")}
             style={cs.icon}
             width={40}
             height={40}
           />
           {title && <Text style={cs.title}>{title}</Text>}
           <Image
-            source={require("../../../assets/icons/notofication.png")}
+            source={require("../../../assets/icons/notification.png")}
             style={cs.icon}
             width={40}
             height={40}

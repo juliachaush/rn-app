@@ -1,25 +1,27 @@
 import { useLocalSearchParams } from "expo-router";
-import React from "react";
-import { FlatList, StyleSheet, Text } from "react-native";
+import React, { useEffect } from "react";
+import { FlatList, StyleSheet } from "react-native";
 
 import { AnimatedQuizCard } from "../../src/components/molecules/AnimatedQuizCard/AnimatedQuizCard";
-import { useLevelQuizzes } from "../../src/hooks/useLevelQuizzes";
+import { useQuizzesContext } from "../../src/context/QuizzesContext/useQuizzesContext";
 import BackButtonLayout from "../../src/layouts/BackButtonLayout";
 import { Theme } from "../../src/theme/theme";
 import { useTheme } from "../../src/theme/themeProvider";
 
 export default function LevelQuizzesScreen() {
   const { levelId } = useLocalSearchParams<{ levelId: string }>();
+  const { currentQuizzes, currentLoading, currentError, loadLevel } =
+    useQuizzesContext();
+  const levelQuizzes = currentQuizzes[0]?.quizzes;
+
   const theme = useTheme();
   const cs = styles(theme);
 
-  const { levelQuizzes, loading, error } = useLevelQuizzes(levelId ?? null);
-
-  if (!levelId) return <Text>Level not found</Text>;
-  if (loading) return <Text style={cs.loadingText}>Loading...</Text>;
-  if (error) return <Text style={cs.loadingText}>Error: {error}</Text>;
-  if (!levelQuizzes.length)
-    return <Text style={cs.loadingText}>No quizzes found</Text>;
+  useEffect(() => {
+    if (levelId) {
+      loadLevel(levelId);
+    }
+  }, [levelId, loadLevel]);
 
   return (
     <BackButtonLayout title={`Level ${levelId}`} isScroll={false}>

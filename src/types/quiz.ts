@@ -51,6 +51,13 @@ export type QuestionData = {
   correctOptionIndex: number;
 };
 
+export type QuizData = {
+  id: string;
+  title: string;
+  image: string;
+  questions: QuestionData[];
+};
+
 export type LevelData = {
   id: string;
   levelId: string;
@@ -58,12 +65,7 @@ export type LevelData = {
   difficulty: Difficulty;
   gift: QuizReward;
 
-  quizzes: {
-    id: string;
-    title: string;
-    image: string;
-    questions: QuestionData[];
-  }[];
+  quizzes: QuizData[];
 };
 
 export type QuizzesData = {

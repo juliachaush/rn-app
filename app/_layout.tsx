@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 import { Provider } from "react-redux";
 
-import { QuizzesProvider } from "../src/context/QuizzesContext";
+import { QuizzesProvider } from "../src/context/QuizzesContext/QuizzesProvider";
 import { store } from "../src/store/store";
 import { getNavigationTheme } from "../src/theme/navigationTheme";
 import { AppThemeProvider, useTheme } from "../src/theme/themeProvider";

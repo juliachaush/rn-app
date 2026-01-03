@@ -4,11 +4,11 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch } from "react-redux";
 
+import { useMemo } from "react";
 import { Image } from "../../../src/components/atoms/Image/Image";
 import { LevelPath } from "../../../src/components/atoms/LevelPath";
 import { LevelPlayButton } from "../../../src/components/molecules/LevelPlayButton";
 import { useLevels } from "../../../src/hooks/useLevels";
-import { updateCurrentLevel } from "../../../src/store/slices/userLevelResults.slice";
 import { AppDispatch } from "../../../src/store/store";
 import { Theme } from "../../../src/theme/theme";
 import { useTheme } from "../../../src/theme/themeProvider";
@@ -27,17 +27,13 @@ export default function PlayScreen() {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const theme = useTheme();
-  const cs = styles(theme);
+  const cs = useMemo(() => styles(theme), [theme]);
 
-  const { data: levels, loading, error } = useLevels();
+  const { data: levels } = useLevels();
 
   const unlockedLevel = 1;
 
-  if (loading) return <Text style={cs.loadingText}>Loading...</Text>;
-  if (error) return <Text style={cs.loadingText}>Error: {error}</Text>;
-
   const handlePressLevel = (levelId: string) => {
-    dispatch(updateCurrentLevel(levelId));
     router.push(`/level/${levelId}`);
   };
 
