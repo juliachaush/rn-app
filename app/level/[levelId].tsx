@@ -44,7 +44,12 @@ export default function LevelQuizzesScreen() {
 
 const styles = (theme: Theme) =>
   StyleSheet.create({
-    container: { flexGrow: 1, paddingVertical: 16, marginTop: 16 },
+    container: {
+      flexGrow: 1,
+      paddingVertical: 16,
+      marginTop: 16,
+      backgroundColor: theme.colors.background,
+    },
     loadingText: {
       color: theme.colors.background,
       fontSize: 18,

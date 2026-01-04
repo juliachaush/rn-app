@@ -67,6 +67,7 @@ const styles = (theme: Theme) =>
     container: {
       flex: 1,
       padding: 16,
+      backgroundColor: theme.colors.background,
     },
     center: {
       flex: 1,

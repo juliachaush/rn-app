@@ -7,7 +7,7 @@ const createStyles = (theme: Theme) =>
     container: {
       flexDirection: "row",
       justifyContent: "space-between",
-      marginHorizontal: 4,
+      marginHorizontal: 12,
     },
     text: { color: theme.colors.primary, fontWeight: "700", fontSize: 16 },
   });

@@ -1,10 +1,12 @@
-import { type PropsWithChildren, forwardRef } from "react";
+import { type PropsWithChildren, forwardRef, useMemo } from "react";
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import BackButtonHeader from "../../components/molecules/BackButtonHeader";
 
-import cs from "./styles";
+import { useTheme } from "../../theme/themeProvider";
+
+import createStyles from "./styles";
 
 type BackButtonLayoutProps = {
   title?: string;
@@ -13,27 +15,27 @@ type BackButtonLayoutProps = {
 
 const BackButtonLayout = forwardRef<ScrollView, BackButtonLayoutProps>(
   ({ title, isScroll = true, children }, ref) => {
+    const theme = useTheme();
+    const cs = useMemo(() => createStyles(theme), [theme]);
+
+    const Content = isScroll ? ScrollView : View;
+
     return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1 }}>
-          <View style={cs.headerWrap}>
-            <BackButtonHeader title={title} />
-          </View>
-          <View style={{ flex: 1 }}>
-            {isScroll ? (
-              <ScrollView
-                ref={ref}
-                keyboardShouldPersistTaps="always"
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={{ flexGrow: 1 }}
-              >
-                {children}
-              </ScrollView>
-            ) : (
-              <View style={{ flex: 1 }}>{children}</View>
-            )}
-          </View>
+      <SafeAreaView style={cs.container}>
+        <View style={cs.headerWrap}>
+          <BackButtonHeader title={title} />
         </View>
+        <Content
+          ref={isScroll ? ref : undefined}
+          style={cs.container}
+          {...(isScroll && {
+            keyboardShouldPersistTaps: "handled",
+            showsVerticalScrollIndicator: false,
+            contentContainerStyle: cs.scrollContent,
+          })}
+        >
+          {children}
+        </Content>
       </SafeAreaView>
     );
   },
