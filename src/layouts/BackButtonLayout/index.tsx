@@ -1,6 +1,5 @@
 import { type PropsWithChildren, forwardRef, useMemo } from "react";
 import { ScrollView, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import BackButtonHeader from "../../components/molecules/BackButtonHeader";
 
@@ -21,7 +20,7 @@ const BackButtonLayout = forwardRef<ScrollView, BackButtonLayoutProps>(
     const Content = isScroll ? ScrollView : View;
 
     return (
-      <SafeAreaView style={cs.container}>
+      <View style={cs.container}>
         <View style={cs.headerWrap}>
           <BackButtonHeader title={title} />
         </View>
@@ -36,7 +35,7 @@ const BackButtonLayout = forwardRef<ScrollView, BackButtonLayoutProps>(
         >
           {children}
         </Content>
-      </SafeAreaView>
+      </View>
     );
   },
 );

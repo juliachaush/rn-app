@@ -1,7 +1,6 @@
 import { useRouter } from "expo-router";
 import React from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch } from "react-redux";
 
 import { useMemo } from "react";
@@ -38,7 +37,7 @@ export default function PlayScreen() {
   };
 
   return (
-    <SafeAreaView style={cs.container}>
+    <View style={cs.container}>
       <Text style={cs.text}>Get started!</Text>
       <Text style={cs.subtext}>Start learning and take your cookie!</Text>
 
@@ -93,7 +92,7 @@ export default function PlayScreen() {
           );
         })}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

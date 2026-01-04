@@ -1,6 +1,5 @@
 import { type PropsWithChildren, ReactNode, forwardRef } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Image } from "../../components/atoms/Image/Image";
 import { useTheme } from "../../theme/themeProvider";
@@ -19,7 +18,7 @@ const HeaderLayout = forwardRef<ScrollView, HeaderLayoutProps>(
     const cs = createStyles(theme);
 
     return (
-      <SafeAreaView style={cs.container}>
+      <View style={cs.container}>
         <View style={cs.header}>
           <Image
             source={require("../../../assets/icons/achievement.png")}
@@ -51,7 +50,7 @@ const HeaderLayout = forwardRef<ScrollView, HeaderLayoutProps>(
         ) : (
           <View style={{ flex: 1 }}>{children}</View>
         )}
-      </SafeAreaView>
+      </View>
     );
   },
 );

@@ -12,7 +12,7 @@ export default function LevelQuizzesScreen() {
   const { levelId } = useLocalSearchParams<{ levelId: string }>();
   const { currentQuizzes, currentLoading, currentError, loadLevel } =
     useQuizzesContext();
-  const levelQuizzes = currentQuizzes[0]?.quizzes;
+  const levelQuizzes = currentQuizzes?.[0]?.quizzes ?? [];
 
   const theme = useTheme();
   const cs = styles(theme);

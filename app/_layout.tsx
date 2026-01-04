@@ -3,7 +3,7 @@ import { Slot, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import "react-native-reanimated";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 
 import { QuizzesProvider } from "../src/context/QuizzesContext/QuizzesProvider";
@@ -27,10 +27,15 @@ function RootNavigation() {
 
   return (
     <>
-      <ThemeProvider value={navigationTheme}>
-        <StatusBar style={theme.mode === "dark" ? "dark" : "dark"} />
-        <Slot />
-      </ThemeProvider>
+      <SafeAreaView
+        style={{ flex: 1, backgroundColor: theme.colors.background }}
+      >
+        <ThemeProvider value={navigationTheme}>
+          <StatusBar style={theme.mode === "dark" ? "light" : "dark"} />
+
+          <Slot />
+        </ThemeProvider>
+      </SafeAreaView>
     </>
   );
 }

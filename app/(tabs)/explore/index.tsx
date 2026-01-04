@@ -7,7 +7,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import learningVideos from "../../../src/data/learningVideos.json";
 
@@ -18,7 +17,7 @@ const CARD_HEIGHT = CARD_WIDTH * 1.5;
 export default function ExploreScreen() {
   // screen in progress
   return (
-    <SafeAreaView edges={["top", "left", "right"]} style={cs.container}>
+    <View style={cs.container}>
       <Text style={cs.heading}>Trending Trainings Now</Text>
 
       <ScrollView
@@ -37,7 +36,7 @@ export default function ExploreScreen() {
           </View>
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

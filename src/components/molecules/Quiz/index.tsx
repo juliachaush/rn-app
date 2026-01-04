@@ -1,17 +1,17 @@
+import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 import { useTheme } from "../../../theme/themeProvider";
-
 import createStyles from "./styles";
 
 type QuizCardProps = {
   id: string;
   title: string;
   description: string;
-  imageKey?: any;
+  imageKey?: string;
 };
 
 export const levelImages: Record<string, any> = {
@@ -31,7 +31,8 @@ export const QuizCard = ({
   const router = useRouter();
   const theme = useTheme();
   const cs = createStyles(theme);
-  const imageSource = (imageKey && levelImages[imageKey]) || levelImages[id];
+
+  const imageSource = imageKey ? levelImages[imageKey] : levelImages[id];
 
   const handlePress = () => {
     router.push({
@@ -50,7 +51,14 @@ export const QuizCard = ({
         style={cs.gradient}
       >
         <View style={cs.row}>
-          <Image source={imageSource} style={cs.image} resizeMode="contain" />
+          <Image
+            source={imageSource}
+            style={cs.image}
+            contentFit="contain"
+            transition={400}
+            placeholder={{ width: 80, height: 80 }}
+            cachePolicy="memory-disk"
+          />
 
           <View style={cs.textContainer}>
             <Text style={cs.title}>{title}</Text>
