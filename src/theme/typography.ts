@@ -1,31 +1,50 @@
-import { StyleSheet } from "react-native";
+import { Theme, Typography } from "./theme";
 
-export const typography = StyleSheet.create({
+export const createTypography = (theme: Theme): Typography => ({
   h6: {
     fontSize: 22,
     fontWeight: 600,
+    color: theme.colors.text,
+    fontFamily: theme.fonts.sans,
   },
-  default: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "600",
-  },
+
   title: {
-    fontSize: 32,
-    fontWeight: "bold",
+    fontSize: theme.fontSizes.lg,
+    fontWeight: 700,
     lineHeight: 32,
+    color: theme.colors.text,
+    fontFamily: theme.fonts.sans,
   },
+
   subtitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 600,
+    color: theme.colors.text,
   },
+
+  body: {
+    fontSize: theme.fontSizes.sm,
+    lineHeight: 24,
+    color: theme.colors.text,
+  },
+
+  bodySemiBold: {
+    fontSize: theme.fontSizes.sm,
+    lineHeight: 24,
+    fontWeight: 600,
+    color: theme.colors.text,
+  },
+
   link: {
-    lineHeight: 30,
     fontSize: 16,
-    fontWeight: "400",
+    lineHeight: 30,
+    color: theme.colors.accent,
+    fontWeight: 400,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 30,
+    color: theme.colors.text,
+    fontWeight: 400,
   },
 });

@@ -1,4 +1,5 @@
-import { Platform } from "react-native";
+import { Platform, TextStyle } from "react-native";
+import { createTypography } from "./typography";
 
 /* ===== Base colors ===== */
 const learningGreen = "#1DB954";
@@ -16,6 +17,16 @@ const successGreen = "#27AE60";
 
 /* ===== Types ===== */
 export type ThemeMode = "light" | "dark";
+
+export type Typography = {
+  h6: TextStyle;
+  title: TextStyle;
+  subtitle: TextStyle;
+  body: TextStyle;
+  bodySemiBold: TextStyle;
+  link: TextStyle;
+  text: TextStyle;
+};
 
 export type Theme = {
   mode: ThemeMode;
@@ -45,6 +56,8 @@ export type Theme = {
     info: string;
     success: string;
   };
+
+  typography: Typography;
 
   gradients: {
     primary: [string, string, string];
@@ -128,6 +141,8 @@ export const lightTheme: Theme = {
     success: successGreen,
   },
 
+  typography: {} as any,
+
   gradients: {
     primary: ["#2FE96A", "#1DB954", "#14833B"],
     disabled: ["#3A3A3A", "#2C2C2C"],
@@ -157,6 +172,8 @@ export const lightTheme: Theme = {
   },
 };
 
+lightTheme.typography = createTypography(lightTheme);
+
 /* ===== Dark theme ===== */
 export const darkTheme: Theme = {
   ...lightTheme,
@@ -169,3 +186,5 @@ export const darkTheme: Theme = {
     surface: learningBlack,
   },
 };
+
+darkTheme.typography = createTypography(darkTheme);

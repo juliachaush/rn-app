@@ -35,7 +35,9 @@ export default function PlayScreen() {
   return (
     <View style={cs.container}>
       <Text style={cs.text}>Get started!</Text>
-      <Text style={cs.subtext}>Start learning and take your cookie!</Text>
+      <Text style={[theme.typography.text, cs.subtext]}>
+        Start learning and take your cookie!
+      </Text>
 
       <View style={cs.pathContainer}>
         {levels.map((level, index) => {
@@ -109,8 +111,6 @@ const styles = (theme: Theme) =>
     },
 
     subtext: {
-      fontSize: 16,
-      fontWeight: "400",
       color: theme.colors.textSecondary,
       textAlign: "center",
       marginBottom: 40,
