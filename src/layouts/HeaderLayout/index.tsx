@@ -1,9 +1,10 @@
 import { type PropsWithChildren, ReactNode, forwardRef } from "react";
 import { ScrollView, Text, View } from "react-native";
 
-import { Image } from "../../components/atoms/Image/Image";
+import { LocalImage } from "../../components/atoms/Image/LocalImage";
 import { useTheme } from "../../theme/themeProvider";
 
+import { ASSETS } from "../../../assets";
 import createStyles from "./styles";
 
 type HeaderLayoutProps = {
@@ -20,15 +21,15 @@ const HeaderLayout = forwardRef<ScrollView, HeaderLayoutProps>(
     return (
       <View style={cs.container}>
         <View style={cs.header}>
-          <Image
-            source={require("../../../assets/icons/achievement.png")}
+          <LocalImage
+            source={ASSETS.icons.achievement}
             style={cs.icon}
             width={40}
             height={40}
           />
           {title && <Text style={cs.title}>{title}</Text>}
-          <Image
-            source={require("../../../assets/icons/notification.png")}
+          <LocalImage
+            source={ASSETS.icons.notification}
             style={cs.icon}
             width={40}
             height={40}

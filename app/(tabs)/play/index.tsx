@@ -4,9 +4,11 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 
 import { useMemo } from "react";
-import { Image } from "../../../src/components/atoms/Image/Image";
+import { ASSETS } from "../../../assets";
+import { LocalImage } from "../../../src/components/atoms/Image/LocalImage";
 import { LevelPath } from "../../../src/components/atoms/LevelPath";
 import { LevelPlayButton } from "../../../src/components/molecules/LevelPlayButton";
+import { LEVEL_PAGE } from "../../../src/consts/routes";
 import { useLevels } from "../../../src/hooks/useLevels";
 import { AppDispatch } from "../../../src/store/store";
 import { Theme } from "../../../src/theme/theme";
@@ -14,13 +16,7 @@ import { useTheme } from "../../../src/theme/themeProvider";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
-const cookies = [
-  require("../../../assets/images/cookie.png"),
-  require("../../../assets/images/cookie.png"),
-  require("../../../assets/images/cookie-with-book.png"),
-  require("../../../assets/images/cookie.png"),
-  require("../../../assets/images/cookie-with-book.png"),
-];
+const cookies = [ASSETS.images.cookie, ASSETS.images.cookieWithBook];
 
 export default function PlayScreen() {
   const router = useRouter();
@@ -33,7 +29,7 @@ export default function PlayScreen() {
   const unlockedLevel = 1;
 
   const handlePressLevel = (levelId: string) => {
-    router.push(`/level/${levelId}`);
+    router.push(`${LEVEL_PAGE}/${levelId}`);
   };
 
   return (
@@ -70,7 +66,7 @@ export default function PlayScreen() {
                   },
                 ]}
               >
-                <Image
+                <LocalImage
                   source={cookieImg}
                   style={cs.cookieImg}
                   width={56}
@@ -125,7 +121,7 @@ const styles = (theme: Theme) =>
       width: SCREEN_WIDTH,
       height: SCREEN_HEIGHT,
       position: "absolute",
-      top: 160,
+      top: 80,
       left: 76,
     },
 

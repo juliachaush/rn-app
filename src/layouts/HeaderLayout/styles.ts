@@ -11,7 +11,7 @@ const createStyles = (theme: Theme) =>
       justifyContent: "flex-end",
       paddingHorizontal: 16,
       paddingVertical: 8,
-      backgroundColor: theme.colors.surface,
+      backgroundColor: theme.colors.background,
     },
     title: {
       color: theme.colors.onPrimary,

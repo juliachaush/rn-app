@@ -5,8 +5,10 @@ import { Pressable, Text, View } from "react-native";
 
 import { useTheme } from "../../../theme/themeProvider";
 import { IconSymbol } from "../../atoms/Icon";
-import { Image } from "../../atoms/Image/Image";
+import { LocalImage } from "../../atoms/Image/LocalImage";
 
+import { ASSETS } from "../../../../assets";
+import { QUIZ_PATH } from "../../../consts/routes";
 import createStyles from "./styles";
 
 type NavigationCardProps = {
@@ -33,7 +35,7 @@ export const NavigationCard = ({
 
   const handlePress = () => {
     router.push({
-      pathname: "/quiz/[id]",
+      pathname: `${QUIZ_PATH}/[id]`,
       params: { id },
     });
   };
@@ -48,8 +50,8 @@ export const NavigationCard = ({
     >
       <View style={cs.leftContent}>
         {isImage && (
-          <Image
-            source={require("../../../../assets/icons/star.png")}
+          <LocalImage
+            source={ASSETS.icons.star}
             style={cs.cardImg}
             width={60}
             height={60}

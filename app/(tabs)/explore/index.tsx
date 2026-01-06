@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  Dimensions,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
 
+import { ASSETS } from "../../../assets";
+import { LocalImage } from "../../../src/components/atoms/Image/LocalImage";
 import learningVideos from "../../../src/data/learningVideos.json";
 
 const { width } = Dimensions.get("window");
@@ -27,9 +22,11 @@ export default function ExploreScreen() {
       >
         {learningVideos.map((movie: any, index: number) => (
           <View key={index} style={cs.card}>
-            <Image
-              source={require("../../../assets/images/blockchain-technology-cartoon-illustration (1).jpg")}
+            <LocalImage
+              source={ASSETS.images.blockchainCartoon1}
               style={cs.image}
+              width={180}
+              height={240}
             />
             <Text style={cs.title}>{movie.title}</Text>
             <Text style={cs.viewsText}>Views:193400</Text>

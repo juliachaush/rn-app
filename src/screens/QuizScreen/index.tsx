@@ -2,9 +2,10 @@ import { useRoute } from "@react-navigation/native";
 import React from "react";
 import { Text, View } from "react-native";
 
-import { Image } from "../../components/atoms/Image/Image";
+import { LocalImage } from "../../components/atoms/Image/LocalImage";
 import { useTheme } from "../../theme/themeProvider";
 
+import { ASSETS } from "../../../assets";
 import createStyles from "./styles";
 
 export function QuizPlayScreen() {
@@ -16,8 +17,8 @@ export function QuizPlayScreen() {
 
   return (
     <View style={cs.container}>
-      <Image
-        source={require("../../../assets/images/cookie.png")}
+      <LocalImage
+        source={ASSETS.images.cookie}
         style={cs.quizImg}
         width={100}
         height={100}

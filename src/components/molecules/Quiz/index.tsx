@@ -1,10 +1,11 @@
-import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 
+import { ASSETS } from "../../../../assets";
 import { useTheme } from "../../../theme/themeProvider";
+import { LocalImage } from "../../atoms/Image/LocalImage";
 import createStyles from "./styles";
 
 type QuizCardProps = {
@@ -15,11 +16,11 @@ type QuizCardProps = {
 };
 
 export const levelImages: Record<string, any> = {
-  "1": require("../../../../assets/images/mascot_puppy.jpg"),
-  "2": require("../../../../assets/images/mascot-one.jpg"),
-  "3": require("../../../../assets/images/mascot_puppy.jpg"),
-  "4": require("../../../../assets/images/mascot-one.jpg"),
-  "5": require("../../../../assets/images/mascot_puppy.jpg"),
+  "1": ASSETS.images.mascotPuppy,
+  "2": ASSETS.images.mascotOne,
+  "3": ASSETS.images.mascotPuppy,
+  "4": ASSETS.images.mascotOne,
+  "5": ASSETS.images.mascotPuppy,
 };
 
 export const QuizCard = ({
@@ -51,13 +52,11 @@ export const QuizCard = ({
         style={cs.gradient}
       >
         <View style={cs.row}>
-          <Image
+          <LocalImage
             source={imageSource}
             style={cs.image}
-            contentFit="contain"
-            transition={400}
-            placeholder={{ width: 80, height: 80 }}
-            cachePolicy="memory-disk"
+            width={80}
+            height={80}
           />
 
           <View style={cs.textContainer}>

@@ -1,90 +1,42 @@
 import { Tabs } from "expo-router";
-import React from "react";
-import { Image } from "react-native";
+import React, { useMemo } from "react";
 
 import { HapticTab } from "../../src/components/atoms/Tab";
+import { TabIcon } from "../../src/components/molecules/TabIcon/TabIcon";
 import { useTheme } from "../../src/theme/themeProvider";
+import { TABS } from "./tabs.config";
 
 export default function TabLayout() {
   const theme = useTheme();
 
+  const screenOptions = useMemo(
+    () => ({
+      headerShown: false,
+      tabBarActiveTintColor: theme.colors.accent,
+      tabBarInactiveTintColor: theme.colors.icon,
+      tabBarButton: HapticTab,
+      tabBarStyle: {
+        backgroundColor: theme.colors.background,
+        borderTopColor: theme.colors.border,
+      },
+    }),
+    [theme],
+  );
+
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: theme.colors.accent,
-        tabBarInactiveTintColor: theme.colors.icon,
-        tabBarButton: HapticTab,
-        tabBarStyle: {
-          backgroundColor: theme.colors.surface,
-          borderTopColor: theme.colors.border,
-        },
-      }}
-    >
-      <Tabs.Screen
-        name="home/index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require("../../assets/icons/star-outline.png")}
-              style={{ width: 24, height: 24, tintColor: color }}
-            />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="play/index"
-        options={{
-          title: "Play",
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require("../../assets/icons/extension-puzzle-outline.png")}
-              style={{ width: 24, height: 24, tintColor: color }}
-            />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="explore/index"
-        options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require("../../assets/icons/book-outline.png")}
-              style={{ width: 24, height: 24, tintColor: color }}
-            />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="review/index"
-        options={{
-          title: "Review",
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require("../../assets/icons/star-outline.png")}
-              style={{ width: 24, height: 24, tintColor: color }}
-            />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="profile/index"
-        options={{
-          title: "Profile",
-          tabBarIcon: ({ color }) => (
-            <Image
-              source={require("../../assets/icons/person-outline.png")}
-              style={{ width: 24, height: 24, tintColor: color }}
-            />
-          ),
-        }}
-      />
+    <Tabs screenOptions={screenOptions}>
+      {TABS.map((tab) => (
+        <Tabs.Screen
+          key={tab.name}
+          name={tab.name}
+          options={{
+            title: tab.title,
+            tabBarIcon: ({ color }) => (
+              <TabIcon color={color} source={tab.icon} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 }

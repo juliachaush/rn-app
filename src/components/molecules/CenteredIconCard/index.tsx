@@ -4,8 +4,9 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 
 import { useTheme } from "../../../theme/themeProvider";
-import { Image } from "../../atoms/Image/Image";
+import { LocalImage } from "../../atoms/Image/LocalImage";
 
+import { ASSETS } from "../../../../assets";
 import createStyles from "./styles";
 
 type CenteredIconCardProps = {
@@ -41,8 +42,8 @@ export const CenteredIconCard = ({
         style={cs.gradient}
       >
         <View style={[cs.iconWrapper, { backgroundColor: `${themeColor}55` }]}>
-          <Image
-            source={require("../../../../assets/images/cookie-with-book.png")}
+          <LocalImage
+            source={ASSETS.images.cookieWithBook}
             style={cs.cardImg}
             width={80}
             height={80}

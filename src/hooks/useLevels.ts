@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { LEVEL_PATH } from "../consts/routes";
 import { apiFetch } from "../services/api/api";
 import { LevelPreview } from "../types/quiz";
 
@@ -8,8 +9,6 @@ type State = {
   loading: boolean;
   error: string | null;
 };
-
-const LEVEL_PATH = "/levels";
 
 export function useLevels() {
   const [state, setState] = useState<State>({

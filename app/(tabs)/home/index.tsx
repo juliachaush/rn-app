@@ -1,11 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useMemo } from "react";
 import { StyleSheet, View } from "react-native";
 
 import HeaderLayout from "../../../src/layouts/HeaderLayout";
 import { HomeScreen } from "../../../src/screens";
+import { Theme } from "../../../src/theme/theme";
+import { useTheme } from "../../../src/theme/themeProvider";
 
 export default function HomeTabScreen() {
+  const theme = useTheme();
+  const cs = useMemo(() => styles(theme), [theme]);
   return (
     <View style={cs.container}>
       <StatusBar style="light" />
@@ -16,11 +20,12 @@ export default function HomeTabScreen() {
   );
 }
 
-const cs = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#191414",
-  },
-});
+const styles = (theme: Theme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: theme.colors.background,
+    },
+  });
