@@ -86,7 +86,10 @@ RN-APP/
 
 | Home Page | Levels | Level quizzes | Quiz |
 |---------------|------------|------------|-------|
-| ![Home](./docs/screenshot-home.png) | ![Levels](./docs/screenshot-levels.png) | ![Level quizzes](./docs/screenshot-level-quizzes.png) | ![Quiz](./docs/screenshot-quiz.png) |
+![Home](./docs/screenshot-home.png)
+![Levels](./docs/screenshot-levels.png)
+![Level quizzes](./docs/screenshot-level-quizzes.png)
+![Quiz](./docs/screenshot-quiz.png)
 
 
 ## Getting Started
