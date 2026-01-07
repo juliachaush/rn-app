@@ -2,35 +2,35 @@
   {
     "id": "1",
     "title": "Beginner",
-    "imageUrl": "https://example.com/images/levels/beginner.png",
+    "imageUrl": "",
     "enabled": true,
     "position": { "x": 40, "y": 80 }
   },
   {
     "id": "2",
     "title": "Intermediate",
-    "imageUrl": "https://example.com/images/levels/intermediate.png",
+    "imageUrl": "",
     "enabled": false,
     "position": { "x": 220, "y": 160 }
   },
   {
     "id": "3",
     "title": "Advanced",
-    "imageUrl": "https://example.com/images/levels/advanced.png",
+    "imageUrl": "",
     "enabled": false,
     "position": { "x": 120, "y": 260 }
   },
   {
     "id": "4",
     "title": "Pro",
-    "imageUrl": "https://example.com/images/levels/pro.png",
+    "imageUrl": "",
     "enabled": false,
     "position": { "x": 260, "y": 380 }
   },
   {
     "id": "5",
     "title": "Master",
-    "imageUrl": "https://example.com/images/levels/master.png",
+    "imageUrl": "",
     "enabled": false,
     "position": { "x": 160, "y": 520 }
   }

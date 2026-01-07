@@ -1,8 +1,12 @@
 import Constants from "expo-constants";
+import { Platform } from "react-native";
 
 const { localIp, serverPort } = Constants.expoConfig?.extra ?? {};
 
-const BASE_URL = `http://${localIp}:${serverPort}/api`;
+const BASE_URL =
+  Platform.OS === "web"
+    ? "http://localhost:3001/api"
+    : `http://${localIp}:${serverPort}/api`;
 
 type RequestOptions = {
   method?: "GET" | "POST" | "PUT" | "DELETE";

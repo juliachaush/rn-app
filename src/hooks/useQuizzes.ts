@@ -1,4 +1,4 @@
-import { QUIZZES_PATH } from "../consts/routes";
+import { QUIZZES_PATH } from "../lib/consts/routes";
 import { apiFetch } from "../services/api/api";
 import { LevelData } from "../types/quiz";
 

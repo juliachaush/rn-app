@@ -3,8 +3,8 @@ import React, { useMemo } from "react";
 
 import { HapticTab } from "../../src/components/atoms/Tab";
 import { TabIcon } from "../../src/components/molecules/TabIcon/TabIcon";
+import { TABS } from "../../src/lib/tabs.config";
 import { useTheme } from "../../src/theme/themeProvider";
-import { TABS } from "./tabs.config";
 
 export default function TabLayout() {
   const theme = useTheme();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { LEVEL_PATH } from "../consts/routes";
+import { LEVELS_PATH } from "../lib/consts/routes";
 import { apiFetch } from "../services/api/api";
 import { LevelPreview } from "../types/quiz";
 
@@ -24,7 +24,7 @@ export function useLevels() {
       setState((s) => ({ ...s, loading: true, error: null }));
 
       try {
-        const data = await apiFetch<LevelPreview[]>(LEVEL_PATH);
+        const data = await apiFetch<LevelPreview[]>(`${LEVELS_PATH}`);
 
         if (active) {
           setState({

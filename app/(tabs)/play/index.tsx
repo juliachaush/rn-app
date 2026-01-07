@@ -8,11 +8,11 @@ import { ASSETS } from "../../../assets";
 import { LocalImage } from "../../../src/components/atoms/Image/LocalImage";
 import { LevelPath } from "../../../src/components/atoms/LevelPath";
 import { LevelPlayButton } from "../../../src/components/molecules/LevelPlayButton";
-import { LEVEL_PAGE } from "../../../src/consts/routes";
 import { useLevels } from "../../../src/hooks/useLevels";
 import { AppDispatch } from "../../../src/store/store";
 import { Theme } from "../../../src/theme/theme";
 import { useTheme } from "../../../src/theme/themeProvider";
+import { LEVEL_PAGE } from "../../../src/lib/consts/routes";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 

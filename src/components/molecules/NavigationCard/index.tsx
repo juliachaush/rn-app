@@ -8,7 +8,7 @@ import { IconSymbol } from "../../atoms/Icon";
 import { LocalImage } from "../../atoms/Image/LocalImage";
 
 import { ASSETS } from "../../../../assets";
-import { QUIZ_PATH } from "../../../consts/routes";
+import { QUIZ_PATH } from "../../../lib/consts/routes";
 import createStyles from "./styles";
 
 type NavigationCardProps = {
