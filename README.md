@@ -68,7 +68,7 @@ RN-APP/
 │ │ ├─ themeProvider.tsx # Theme context & switching
 │ │ └─ navigationTheme.tsx
 │ │
-│ ├─ consts/ # Constants
+│ ├─ lib/ # Constants & configs
 │ ├─ data/ # Static or mock data
 │ ├─ types/ # Global TypeScript types
 │ └─ utils/ # Helper functions
@@ -81,6 +81,13 @@ RN-APP/
 └─ README.md
 
 ---
+
+## Screenshots
+
+| Home Page | Levels | Level quizzes | Quiz |
+|---------------|------------|------------|-------|
+| ![Home](./docs/screenshot-home.png) | ![Levels](./docs/screenshot-levels.png) | ![Level quizzes](./docs/screenshot-level-quizzes.png) | ![Quiz](./docs/screenshot-quiz.png) |
+
 
 ## Getting Started
 
